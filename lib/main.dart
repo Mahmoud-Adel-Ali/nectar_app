@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/helper/font_family_helper.dart';
 import 'package:nectar_app/features/onbording/presentation/view/onbording_view.dart';
 
 void main() {
@@ -11,10 +12,13 @@ class NectarApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       title: 'Nectar',
+      theme: ThemeData(
+        fontFamily: FontFamilyHelper.gilroy
+      ),
       debugShowCheckedModeBanner: false,
-      home: OnbordingView(),
+      home: const OnbordingView(),
     );
   }
 }
