@@ -13,6 +13,7 @@ class NectarApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Nectar',
+      debugShowCheckedModeBanner: false,
       home: OnbordingView(),
     );
   }
