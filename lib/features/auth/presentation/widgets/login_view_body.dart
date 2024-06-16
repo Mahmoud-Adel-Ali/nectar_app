@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/auth/presentation/widgets/login_and_signup_last_section.dart';
+import 'package:nectar_app/features/auth/presentation/widgets/login_form.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.sizeOf(context).height;
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -16,22 +19,29 @@ class LoginViewBody extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: [
-            Image.asset(AppImages.carrot),
-            const SizedBox(
+            Image.asset(AppImages.carrot, height: height * 0.25),
+            SizedBox(
+              height: height * 0.04,
               width: double.infinity,
-              child: Text(
+              child: const Text(
                 "Loging",
                 style: Styless.textStyle26,
               ),
             ),
-            const SizedBox(height: 10),
-            const SizedBox(
+            SizedBox(
+              height: height * 0.04,
               width: double.infinity,
-              child: Text("Enter your emails and password",
+              child: const Text("Enter your emails and password",
                   style: Styless.textStyle14),
+            ),
+            const LoginForm(),
+            SizedBox(height: height * 0.02),
+            LoginAndSignUpLastSection(
+              firstText: "Don’t have an account? ",
+              navigatorText: "Singup",
+              onPressed: () {},
             ),
           ],
         ),
@@ -39,3 +49,4 @@ class LoginViewBody extends StatelessWidget {
     );
   }
 }
+
