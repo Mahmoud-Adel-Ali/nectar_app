@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/helper/font_family_helper.dart';
 
 abstract class Styless {
   static const TextStyle textStyle12 = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w600,
+    color: AppColors.greyText,
   );
   static const TextStyle textStyle14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w600,
+    color: AppColors.greyText,
   );
   static const TextStyle textStyle16 = TextStyle(
     fontSize: 16,

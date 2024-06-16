@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/auth/presentation/views/login_view.dart';
 
 class OnbordingViewBody extends StatelessWidget {
   const OnbordingViewBody({super.key});
@@ -40,7 +41,11 @@ class OnbordingViewBody extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             CustomButtom(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const LoginView(),
+                ));
+              },
               child: const Text(
                 "Get Started",
                 style: Styless.textStyle18,
