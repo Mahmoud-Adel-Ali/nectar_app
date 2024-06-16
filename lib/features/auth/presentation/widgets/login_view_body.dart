@@ -7,30 +7,34 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-            alignment: Alignment.center,
-            height: MediaQuery.sizeOf(context).height * 0.3,
-            child: Image.asset(AppImages.carrot),
-          ),
-          const SizedBox(
-            width: double.infinity,
-            child: Text(
-              "Loging",
-              style: Styless.textStyle26,
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage(AppImages.loginBackground),
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(AppImages.carrot),
+            const SizedBox(
+              width: double.infinity,
+              child: Text(
+                "Loging",
+                style: Styless.textStyle26,
+              ),
             ),
-          ),
-          const SizedBox(height: 10),
-          const SizedBox(
-            width: double.infinity,
-            child: Text("Enter your emails and password",
-                style: Styless.textStyle14),
-          ),
-        ],
+            const SizedBox(height: 10),
+            const SizedBox(
+              width: double.infinity,
+              child: Text("Enter your emails and password",
+                  style: Styless.textStyle14),
+            ),
+          ],
+        ),
       ),
     );
   }
