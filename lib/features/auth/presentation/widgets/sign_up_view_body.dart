@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/core/utils/styless.dart';
-import 'package:nectar_app/features/auth/presentation/views/sign_up_view.dart';
-import 'package:nectar_app/features/auth/presentation/widgets/login_and_signup_last_section.dart';
-import 'package:nectar_app/features/auth/presentation/widgets/login_form.dart';
+import 'package:nectar_app/features/auth/presentation/views/login_view.dart';
+import 'package:nectar_app/features/auth/presentation/widgets/sign_up_form.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+import 'login_and_signup_last_section.dart';
+
+class SignUpViewBody extends StatelessWidget {
+  const SignUpViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class LoginViewBody extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage(AppImages.loginBackground),
+          image: AssetImage(AppImages.signupBackground),
         ),
       ),
       child: Padding(
@@ -27,26 +28,26 @@ class LoginViewBody extends StatelessWidget {
               height: height * 0.04,
               width: double.infinity,
               child: const Text(
-                "Loging",
+                "Sign Up",
                 style: Styless.textStyle26,
               ),
             ),
             SizedBox(
               height: height * 0.04,
               width: double.infinity,
-              child: const Text("Enter your emails and password",
+              child: const Text("Enter your credentials to continue",
                   style: Styless.textStyle14),
             ),
-            const LoginForm(),
+            const SignUpForm(),
             SizedBox(height: height * 0.02),
             LoginAndSignUpLastSection(
-              firstText: "Don’t have an account? ",
-              navigatorText: "Singup",
+              firstText: "Already have an account? ",
+              navigatorText: "Login",
               onPressed: () {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const SignUpView(),
+                      builder: (context) => const LoginView(),
                     ));
               },
             ),
