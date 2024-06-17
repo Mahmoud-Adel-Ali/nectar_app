@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/auth/presentation/views/forget_password_view.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/custom_text_form_field.dart';
 
 class LoginForm extends StatefulWidget {
@@ -62,7 +63,13 @@ class _LoginFormState extends State<LoginForm> {
             width: double.infinity,
             alignment: Alignment.centerRight,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ForgetPasswordView(),
+                    ));
+              },
               child: Text(
                 "Forget password?",
                 style: Styless.textStyle14.copyWith(
