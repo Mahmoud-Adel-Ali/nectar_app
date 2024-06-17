@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/core/databases/cache/cache_Keys.dart';
 import 'package:nectar_app/core/helper/font_family_helper.dart';
 import 'package:nectar_app/core/databases/cache/cache_helper.dart';
+import 'package:nectar_app/core/services/services_locator.dart';
 import 'package:nectar_app/features/auth/presentation/views/login_view.dart';
 import 'package:nectar_app/features/onbording/presentation/view/onbording_view.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  CacheHelper().init();
+  setupServicesLocator();
+  await getit<CacheHelper>().init();
   runApp(const NectarApp());
 }
 
@@ -20,7 +22,7 @@ class NectarApp extends StatelessWidget {
       title: 'Nectar',
       theme: ThemeData(fontFamily: FontFamilyHelper.gilroy),
       debugShowCheckedModeBanner: false,
-      home: CacheHelper().getBoolean(CacheKeys.onbordingVisited)??false
+      home: getit<CacheHelper>().getBoolean(CacheKeys.onbordingVisited) ?? false
           ? const LoginView()
           : const OnbordingView(),
     );

@@ -3,6 +3,7 @@ import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/databases/cache/cache_Keys.dart';
 import 'package:nectar_app/core/databases/cache/cache_helper.dart';
+import 'package:nectar_app/core/services/services_locator.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/auth/presentation/views/login_view.dart';
 
@@ -44,7 +45,7 @@ class OnbordingViewBody extends StatelessWidget {
             const SizedBox(height: 40),
             CustomButtom(
               onPressed: () {
-                CacheHelper().setBoolean(CacheKeys.onbordingVisited, true);
+                getit<CacheHelper>().setBoolean(CacheKeys.onbordingVisited, true);
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const LoginView(),
                 ));
