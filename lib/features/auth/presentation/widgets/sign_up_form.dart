@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/auth/presentation/functions/valid.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/custom_text_form_field.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/sign_up_service_and_policy.dart';
 
@@ -42,7 +43,7 @@ class _SignUpFormState extends State<SignUpForm> {
               email = data;
             },
             validator: (value) {
-              return vaildEmail(value) ? null : "Enter a valid email";
+              return validatorOfEmail(value);
             },
           ),
           SizedBox(height: height * 0.04),
@@ -52,9 +53,7 @@ class _SignUpFormState extends State<SignUpForm> {
               password = data;
             },
             validator: (value) {
-              return value!.length < 8
-                  ? "Enter a valid password : at least 8 chracter"
-                  : null;
+              return validatorOfPassword(value);
             },
             obscureText: hiddenPassword,
             suffixIcon: IconButton(
@@ -87,10 +86,5 @@ class _SignUpFormState extends State<SignUpForm> {
         ],
       ),
     );
-  }
-
-  bool vaildEmail(String? value) {
-    return value!.contains(RegExp(
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"));
   }
 }

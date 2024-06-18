@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
-import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/auth/presentation/functions/valid.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/custom_text_form_field.dart';
 
 class ResetPasswordBottomSheetForm extends StatefulWidget {
@@ -29,10 +29,7 @@ class _ResetPasswordBottomSheetFormState
               email = data;
             },
             validator: (value) {
-              return value!.contains(RegExp(
-                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"))
-                  ? null
-                  : "Enter a valid email";
+              return validatorOfEmail(value);
             },
           ),
           SizedBox(height: height * 0.04),
@@ -42,9 +39,7 @@ class _ResetPasswordBottomSheetFormState
               password = data;
             },
             validator: (value) {
-              return value!.length < 8
-                  ? "Enter a valid password : at least 8 chracter"
-                  : null;
+              return validatorOfPassword(value);
             },
           ),
           SizedBox(height: height * 0.04),
@@ -54,20 +49,14 @@ class _ResetPasswordBottomSheetFormState
               password = data;
             },
             validator: (value) {
-              return value!.length < 8
-                  ? "Enter a valid password : at least 8 chracter"
-                  : null;
+              return validatorOfPassword(value);
             },
           ),
           SizedBox(height: height * 0.1),
           CustomButtom(
             onPressed: () {
               if (formKey.currentState!.validate()) {
-                // formKey.currentState!.save();
-                showSnackBar(context,
-                    message: 'done', backgroundColor: Colors.green);
-              } else {
-                showSnackBar(context, message: 'please fill all fieldes');
+                formKey.currentState!.save();
               }
             },
             child: const Text(
