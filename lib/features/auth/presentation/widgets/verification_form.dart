@@ -5,6 +5,7 @@ import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/auth/presentation/widgets/reset_password_bottom_sheet.dart';
 
 class VerificationForm extends StatelessWidget {
   VerificationForm({super.key});
@@ -49,7 +50,10 @@ class VerificationForm extends StatelessWidget {
           ),
           const SizedBox(height: 50),
           CustomButtom(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+              resetPasswordBottomSheet(context);
+            },
             child: const Text(
               "Send Code",
               style: Styless.textStyle18,
