@@ -7,4 +7,5 @@ abstract class AppImages {
   static const loginBackground = 'assets/images/login_background.jpg';
   static const signupBackground = 'assets/images/sign_up_background.png';
   static const forgetPasswordBackground = 'assets/images/forgetPassword.png';
+  static const acceptedResetingpasswordImage = 'assets/images/accepted.png';
 }

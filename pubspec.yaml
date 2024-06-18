@@ -71,5 +71,8 @@ flutter:
     - family: Gilroy-Bold
       fonts:
         - asset: assets/fonts/Gilroy-ExtraBold.otf
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
