@@ -24,22 +24,16 @@ class SignUpViewBody extends StatelessWidget {
         child: ListView(
           children: [
             Image.asset(AppImages.carrot, height: height * 0.25),
-            SizedBox(
-              height: height * 0.04,
-              width: double.infinity,
-              child: const Text(
-                "Sign Up",
-                style: Styless.textStyle26,
-              ),
+            SizedBox(height: height * 0.01),
+            const Text(
+              "Sign Up",
+              style: Styless.textStyle26,
             ),
-            SizedBox(
-              height: height * 0.04,
-              width: double.infinity,
-              child: const Text("Enter your credentials to continue",
-                  style: Styless.textStyle14),
-            ),
+            SizedBox(height: height * 0.008),
+            const Text("Enter your credentials to continue",
+                style: Styless.textStyle14),
             const SignUpForm(),
-            SizedBox(height: height * 0.02),
+            SizedBox(height: height * 0.04),
             LoginAndSignUpLastSection(
               firstText: "Already have an account? ",
               navigatorText: "Login",
@@ -51,6 +45,7 @@ class SignUpViewBody extends StatelessWidget {
                     ));
               },
             ),
+            SizedBox(height: height * 0.05),
           ],
         ),
       ),

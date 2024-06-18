@@ -23,20 +23,12 @@ class LoginViewBody extends StatelessWidget {
         child: ListView(
           children: [
             Image.asset(AppImages.carrot, height: height * 0.25),
-            SizedBox(
-              height: height * 0.04,
-              width: double.infinity,
-              child: const Text(
-                "Loging",
-                style: Styless.textStyle26,
-              ),
+            const Text(
+              "Loging",
+              style: Styless.textStyle26,
             ),
-            SizedBox(
-              height: height * 0.04,
-              width: double.infinity,
-              child: const Text("Enter your emails and password",
-                  style: Styless.textStyle14),
-            ),
+            const Text("Enter your emails and password",
+                style: Styless.textStyle14),
             const LoginForm(),
             SizedBox(height: height * 0.02),
             LoginAndSignUpLastSection(

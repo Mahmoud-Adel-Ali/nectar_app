@@ -59,7 +59,6 @@ class _LoginFormState extends State<LoginForm> {
           ),
           SizedBox(height: height * 0.01),
           Container(
-            height: height * 0.05,
             width: double.infinity,
             alignment: Alignment.centerRight,
             child: TextButton(

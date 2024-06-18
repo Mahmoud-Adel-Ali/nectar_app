@@ -46,6 +46,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
             const Text(
                 "Enter your email for verification process we \nwill send 5 digits code to your email",
                 style: Styless.textStyle14),
+            SizedBox(height: height * 0.03),
             const ForgetPasswordForm(),
           ],
         ),
