@@ -3,6 +3,7 @@ import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/custom_text_form_field.dart';
+import 'package:nectar_app/features/auth/presentation/widgets/set_verification_code_sheet.dart';
 
 class ForgetPasswordForm extends StatefulWidget {
   const ForgetPasswordForm({super.key});
@@ -37,6 +38,7 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
           SizedBox(height: height * 0.04),
           CustomButtom(
             onPressed: () {
+              setVerificationCodeSheet(context);
               if (formKey.currentState!.validate()) {
                 // formKey.currentState!.save();
                 showSnackBar(context,
