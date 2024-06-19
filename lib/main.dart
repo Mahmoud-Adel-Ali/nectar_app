@@ -3,7 +3,7 @@ import 'package:nectar_app/core/databases/cache/cache_Keys.dart';
 import 'package:nectar_app/core/helper/font_family_helper.dart';
 import 'package:nectar_app/core/databases/cache/cache_helper.dart';
 import 'package:nectar_app/core/services/services_locator.dart';
-import 'package:nectar_app/features/auth/presentation/views/login_view.dart';
+import 'package:nectar_app/features/home/presentation/views/home_view.dart';
 import 'package:nectar_app/features/onbording/presentation/view/onbording_view.dart';
 
 void main() async{
@@ -23,7 +23,7 @@ class NectarApp extends StatelessWidget {
       theme: ThemeData(fontFamily: FontFamilyHelper.gilroy),
       debugShowCheckedModeBanner: false,
       home: getit<CacheHelper>().getBoolean(CacheKeys.onbordingVisited) ?? false
-          ? const LoginView()
+          ? HomeView()  // const LoginView()
           : const OnbordingView(),
     );
   }
