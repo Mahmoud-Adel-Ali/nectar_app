@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 
 class CustomSearchField extends StatelessWidget {
@@ -17,7 +16,7 @@ class CustomSearchField extends StatelessWidget {
           children: [
             SizedBox(height: height * 0.05),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 18),
               decoration: BoxDecoration(
                 color: const Color(0xffF2F3F2),
                 borderRadius: BorderRadius.circular(24),

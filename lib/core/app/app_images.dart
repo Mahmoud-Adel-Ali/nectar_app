@@ -8,4 +8,7 @@ abstract class AppImages {
   static const signupBackground = 'assets/images/sign_up_background.png';
   static const forgetPasswordBackground = 'assets/images/forgetPassword.png';
   static const acceptedResetingpasswordImage = 'assets/images/accepted.png';
+  static const freshViga = 'assets/images/fresh_vige.png';
+  static const freshViga1 = 'assets/images/fresh_vige_1.png';
+  static const freshBox = 'assets/images/fresh_box.jpg';
 }

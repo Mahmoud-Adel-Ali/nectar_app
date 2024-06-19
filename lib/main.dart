@@ -23,7 +23,7 @@ class NectarApp extends StatelessWidget {
       theme: ThemeData(fontFamily: FontFamilyHelper.gilroy),
       debugShowCheckedModeBanner: false,
       home: getit<CacheHelper>().getBoolean(CacheKeys.onbordingVisited) ?? false
-          ? HomeView()  // const LoginView()
+          ? const HomeView()  // const LoginView()
           : const OnbordingView(),
     );
   }
