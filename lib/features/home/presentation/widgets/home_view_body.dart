@@ -12,9 +12,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        CustomSliverAppBar(
-          title: Image.asset(AppImages.carrot, height: 30),
-        ),
+        CustomSliverAppBar(title: Image.asset(AppImages.carrot, height: 30)),
         const CustomSearchField(),
         const FreshVigeBox(),
         const ExclusiveOfferBody(),

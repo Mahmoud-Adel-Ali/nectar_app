@@ -26,15 +26,20 @@ class CustomProductCard extends StatelessWidget {
               height: 80,
             ),
             ListTile(
+              contentPadding: EdgeInsets.zero,
               title: Text(
                 productModel.name,
                 style: Styless.textStyle16Bold,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
               subtitle: Opacity(
                   opacity: 0.5,
                   child: Text(
                     productModel.description,
                     style: Styless.textStyle14,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   )),
             ),
             Row(
