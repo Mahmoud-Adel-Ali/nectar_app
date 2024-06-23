@@ -16,6 +16,7 @@ class CustomSearchField extends StatelessWidget {
           children: [
             SizedBox(height: height * 0.05),
             Container(
+              height: 51.57,
               margin: const EdgeInsets.symmetric(horizontal: 18),
               decoration: BoxDecoration(
                 color: const Color(0xffF2F3F2),
