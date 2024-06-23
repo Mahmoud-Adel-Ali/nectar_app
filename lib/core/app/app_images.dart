@@ -11,4 +11,6 @@ abstract class AppImages {
   static const freshViga = 'assets/images/fresh_vige.png';
   static const freshViga1 = 'assets/images/fresh_vige_1.png';
   static const freshBox = 'assets/images/fresh_box.jpg';
+  static const logout = 'assets/images/logout.svg';
+  static const arrowBack = 'assets/images/arrow_back.svg';
 }

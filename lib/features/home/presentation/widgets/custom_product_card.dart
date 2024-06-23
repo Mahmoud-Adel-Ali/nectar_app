@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
-import 'package:nectar_app/features/home/presentation/views/detalis_view.dart';
+import 'package:nectar_app/features/home/presentation/views/details_view.dart';
 
 class CustomProductCard extends StatelessWidget {
   const CustomProductCard({
@@ -16,7 +16,7 @@ class CustomProductCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const DetalisView(),
+          builder: (context) => const DetailsView(),
         ));
       },
       child: Card(
