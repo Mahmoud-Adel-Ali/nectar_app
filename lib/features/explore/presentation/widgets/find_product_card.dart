@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/explore/presentation/views/category_view.dart';
 
 class FindProductCard extends StatelessWidget {
   const FindProductCard({
@@ -16,7 +17,14 @@ class FindProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const CategoryView(),
+          ),
+        );
+      },
       child: Card(
         elevation: 0.3,
         shape: RoundedRectangleBorder(
