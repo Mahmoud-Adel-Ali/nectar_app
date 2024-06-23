@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 
 class CustomSliverAppBar extends StatelessWidget {
   const CustomSliverAppBar({
-    super.key, required this.title,
+    super.key,
+    required this.title, required this.expandedHeight,
   });
   final Widget title;
+  final double expandedHeight;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      expandedHeight: 98.26,
+      expandedHeight: expandedHeight,
       floating: false,
       pinned: false,
       flexibleSpace: FlexibleSpaceBar(

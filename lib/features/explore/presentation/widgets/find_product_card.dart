@@ -7,34 +7,38 @@ class FindProductCard extends StatelessWidget {
     required this.color,
     required this.name,
     required this.imgPath,
+    required this.borderSideColor,
   });
   final Color color;
+  final Color borderSideColor;
   final String name;
   final String imgPath;
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: GestureDetector(
-        onTap: (){},
-        child: Card(
-          elevation: 0.3,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          color: color,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 10),
-              Image.network(imgPath,height: 80,),
-              const SizedBox(height: 10),
-              Text(
-                name,
-                textAlign: TextAlign.center,
-                style: Styless.textStyle22bold,
-              ),
-            ],
-          ),
+    return GestureDetector(
+      onTap: () {},
+      child: Card(
+        elevation: 0.3,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(width: 2, color: borderSideColor),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        color: color,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 10),
+            Image.network(
+              imgPath,
+              height: 80,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              name,
+              textAlign: TextAlign.center,
+              style: Styless.textStyle22bold,
+            ),
+          ],
         ),
       ),
     );
