@@ -13,12 +13,12 @@ class DetailsImage extends StatelessWidget {
     return Container(
       color: const Color(0xffF2F3F2),
       height: MediaQuery.sizeOf(context).height * 0.405,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(18),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(16.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

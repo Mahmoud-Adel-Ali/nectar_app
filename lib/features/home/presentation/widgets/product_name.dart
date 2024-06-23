@@ -8,6 +8,7 @@ class ProductName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.zero,
       title: Text(
         title,
         style: Styless.textStyle24Bold,
