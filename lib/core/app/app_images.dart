@@ -13,4 +13,9 @@ abstract class AppImages {
   static const freshBox = 'assets/images/fresh_box.jpg';
   static const logout = 'assets/images/logout.svg';
   static const arrowBack = 'assets/images/arrow_back.svg';
+  static const account = 'assets/images/account.svg';
+  static const heart = 'assets/images/heart.svg';
+  static const shop = 'assets/images/shop.svg';
+  static const search = 'assets/images/search.svg';
+  static const cart = 'assets/images/cart.svg';
 }
