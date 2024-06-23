@@ -5,6 +5,7 @@ import 'package:nectar_app/features/home/presentation/widgets/custom_search_fiel
 import 'package:nectar_app/features/home/presentation/widgets/custom_sliver_appbar.dart';
 import 'package:nectar_app/features/home/presentation/widgets/exclusive_offer_body.dart';
 import 'package:nectar_app/features/home/presentation/widgets/fresh_vige_box.dart';
+import 'package:nectar_app/features/home/presentation/widgets/groceries_body.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -18,6 +19,8 @@ class HomeViewBody extends StatelessWidget {
         const FreshVigeBox(),
         const ExclusiveOfferBody(),
         const BestSellerBody(),
+        const GroceriesBody(),
+        const SliverToBoxAdapter(child: SizedBox(height: 32)),
       ],
     );
   }
