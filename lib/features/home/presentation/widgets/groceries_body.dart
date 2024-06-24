@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
+import 'package:nectar_app/core/common/custom_product_grid_view.dart';
 import 'package:nectar_app/core/utils/styless.dart';
-import 'package:nectar_app/features/home/data/models/product_model.dart';
 import 'package:nectar_app/features/home/presentation/widgets/custom_groceries_card.dart';
-import 'package:nectar_app/features/home/presentation/widgets/custom_product_card.dart';
+import 'package:nectar_app/test_products_list.dart';
 
 class GroceriesBody extends StatefulWidget {
   const GroceriesBody({super.key});
@@ -58,29 +58,7 @@ class _GroceriesBodyState extends State<GroceriesBody> {
               },
             ),
           ),
-          SizedBox(
-            child: GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: seeAll ? 10 : 4,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.8,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-              ),
-              itemBuilder: (context, index) => CustomProductCard(
-                productModel: ProductModel(
-                  id: 1,
-                  imgPath:
-                      'https://s3-alpha-sig.figma.com/img/8590/b6a4/4c4e9d58d8f6ba361a423878cbabe793?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=P6A2oMxoKXZgGxaIQNUqMnCTBs56xzpd7RzlE5zfs0LyOHPDJHhjLKoqBPCdyfn~L0IhUwajvQhqpmqHaIMzKL~3GnmQRNogqBFA-4vTaeRS8LQGFbEnH1fCCFHi0UTCykXnsaiBjN2cMMrgo3ISEYyadCH7EgXE9MpN~PQz-WvAIUUeu9l-FAjwbLdoZcHUjFVa~hJWBehP5Zb5mLxBPZnHa7Snmc4dc40zr27X8QZyRWspNSMbcE6ZTQ-9BxhjxVS6CaPSNR0FLSnMjm-SgNOnfiG~X9wWKAcvWKDl9ZYIl8SMPV6Zk033q6Q1q5goKjR4nF-MjhjBHP0VGvqfkw__',
-                  name: 'Beef Bone',
-                  description: '1kg, Priceg',
-                  price: 4.99,
-                ),
-              ),
-            ),
-          )
+          CustomProductGridView(seeAll: seeAll, productsList: textProductsList),
         ],
       ),
     );

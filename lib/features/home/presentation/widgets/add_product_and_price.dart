@@ -3,8 +3,8 @@ import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 
 class AddProductAndPrice extends StatefulWidget {
-  const AddProductAndPrice({super.key});
-
+  const AddProductAndPrice({super.key, required this.price});
+  final num price;
   @override
   State<AddProductAndPrice> createState() => _AddProductAndPriceState();
 }
@@ -62,8 +62,8 @@ class _AddProductAndPriceState extends State<AddProductAndPrice> {
             ),
           ],
         ),
-        const Text(
-          '\$4.99',
+        Text(
+          '\$${widget.price.toString()}',
           style: Styless.textStyle24Bold,
         )
       ],
