@@ -11,8 +11,14 @@ class DetailsImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xffF2F3F2),
       height: MediaQuery.sizeOf(context).height * 0.405,
+      decoration: const BoxDecoration(
+        color: Color(0xffF2F3F2),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        ),
+      ),
       padding: const EdgeInsets.all(18),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -31,7 +37,11 @@ class DetailsImage extends StatelessWidget {
               ],
             ),
           ),
-          Image.network(imgPath),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.305,
+            child:
+                FittedBox(fit: BoxFit.scaleDown, child: Image.network(imgPath)),
+          ),
         ],
       ),
     );
