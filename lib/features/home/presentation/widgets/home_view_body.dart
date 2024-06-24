@@ -18,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
           title: Image.asset(AppImages.carrot, height: 30),
           expandedHeight: 98.26,
         ),
-        const CustomSearchField(),
+        CustomSearchField(),
         const FreshVigeBox(),
         const ExclusiveOfferBody(),
         const BestSellerBody(),

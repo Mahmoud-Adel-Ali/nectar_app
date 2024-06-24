@@ -1,9 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 
 class CustomSearchField extends StatelessWidget {
-  const CustomSearchField({super.key});
-
+  CustomSearchField({super.key, this.onChanged,this.suffixIcon});
+  void Function(String)? onChanged;
+  Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.sizeOf(context).height;
@@ -24,16 +27,17 @@ class CustomSearchField extends StatelessWidget {
               ),
               alignment: Alignment.center,
               child: TextField(
-                onChanged: (onChange) {},
+                onChanged: onChanged,
                 style: Styless.textStyle18,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: "Search Store",
                   hintStyle: Styless.textStyle16,
-                  prefixIcon: Icon(
+                  prefixIcon: const Icon(
                     Icons.search,
                     size: 30,
                   ),
+                  suffixIcon: suffixIcon,
                 ),
               ),
             ),

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/explore/presentation/widgets/find_product_card.dart';
 import 'package:nectar_app/features/home/presentation/widgets/custom_search_field.dart';
@@ -20,10 +18,18 @@ class ExploreViewBody extends StatelessWidget {
           ),
           expandedHeight: 56,
         ),
-        const CustomSearchField(),
+        CustomSearchField(
+          suffixIcon: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.cancel,
+              color: Colors.grey,
+            ),
+          ),
+        ),
         SliverFillRemaining(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal:12),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             child: GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
