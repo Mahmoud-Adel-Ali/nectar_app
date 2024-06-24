@@ -24,7 +24,7 @@ class DetailsImage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.only(left: 16,right: 16,top: 30,bottom: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -38,7 +38,7 @@ class DetailsImage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.305,
+            height: MediaQuery.of(context).size.height * 0.25,
             child:
                 FittedBox(fit: BoxFit.scaleDown, child: Image.network(imgPath)),
           ),
