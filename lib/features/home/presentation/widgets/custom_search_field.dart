@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 
 class CustomSearchField extends StatelessWidget {
-  CustomSearchField({super.key, this.onChanged,this.suffixIcon});
+  CustomSearchField({super.key, this.onChanged, this.suffixIcon,this.controller});
   void Function(String)? onChanged;
   Widget? suffixIcon;
+  TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.sizeOf(context).height;
@@ -28,6 +29,7 @@ class CustomSearchField extends StatelessWidget {
               alignment: Alignment.center,
               child: TextField(
                 onChanged: onChanged,
+                controller: controller,
                 style: Styless.textStyle18,
                 decoration: InputDecoration(
                   border: InputBorder.none,
