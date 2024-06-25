@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -29,6 +30,9 @@ class CustomTextFormField extends StatelessWidget {
         labelText: hintText,
         labelStyle: Styless.textStyle16,
         suffixIcon: suffixIcon,
+        focusedBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: AppColors.mainColor,width: 3)
+        ),
       ),
     );
   }

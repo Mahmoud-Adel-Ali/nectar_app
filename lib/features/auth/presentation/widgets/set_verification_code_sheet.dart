@@ -47,7 +47,7 @@ setVerificationCodeSheet(BuildContext context) {
                   width: MediaQuery.sizeOf(context).width * 0.9,
                   padding: const EdgeInsets.only(left: 8),
                   child: const Text(
-                    'Enter the 5 digits code',
+                    'Enter the 6 digits code',
                     style: Styless.textStyle16,
                   ),
                 ),

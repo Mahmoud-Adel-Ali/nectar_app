@@ -22,7 +22,7 @@ class VerificationForm extends StatelessWidget {
             width: MediaQuery.sizeOf(context).width * 0.9,
             height: 80,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(16),
               border: Border.all(
                 color: AppColors.mainColor,
                 width: 3,
@@ -31,8 +31,9 @@ class VerificationForm extends StatelessWidget {
             alignment: Alignment.center,
             child: FittedBox(
               child: VerificationCode(
-                length: 5,
-                itemSize: 50,
+                length: 6,
+                itemSize: 45,
+                margin: const EdgeInsets.all(5),
                 fillColor: AppColors.mainColor,
                 textStyle: Styless.textStyle18.copyWith(color: Colors.white),
                 keyboardType: TextInputType.number,

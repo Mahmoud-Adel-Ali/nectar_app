@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
@@ -68,7 +69,7 @@ class _LoginFormState extends State<LoginForm> {
               child: Text(
                 "Forget password?",
                 style: Styless.textStyle14.copyWith(
-                    color: Colors.blue, decoration: TextDecoration.underline),
+                    color: AppColors.mainColor, decoration: TextDecoration.underline),
               ),
             ),
           ),

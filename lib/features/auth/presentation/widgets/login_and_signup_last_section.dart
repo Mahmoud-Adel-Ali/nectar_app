@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 
 class LoginAndSignUpLastSection extends StatelessWidget {
@@ -25,7 +26,7 @@ class LoginAndSignUpLastSection extends StatelessWidget {
           child: Text(
             navigatorText,
             style: Styless.textStyle16.copyWith(
-              color: Colors.blue,
+              color: AppColors.mainColor,
               decoration: TextDecoration.underline,
             ),
           ),
