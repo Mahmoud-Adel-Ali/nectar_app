@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_app/core/common/custom_product_grid_view.dart';
+import 'package:nectar_app/core/common/widgets/custom_product_grid_view.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/explore/presentation/widgets/categories_grid_view.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';

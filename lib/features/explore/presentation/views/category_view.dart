@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nectar_app/core/app/app_images.dart';
-import 'package:nectar_app/core/common/custom_product_grid_view.dart';
+import 'package:nectar_app/core/common/widgets/custom_product_grid_view.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/test_products_list.dart';
 

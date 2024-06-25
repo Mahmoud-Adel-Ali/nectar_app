@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
-import 'package:nectar_app/core/common/custom_product_grid_view.dart';
+import 'package:nectar_app/core/common/widgets/custom_product_grid_view.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/presentation/widgets/custom_groceries_card.dart';
 import 'package:nectar_app/test_products_list.dart';
