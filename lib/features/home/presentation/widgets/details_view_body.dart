@@ -4,7 +4,7 @@ import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
 import 'package:nectar_app/features/home/presentation/widgets/add_product_and_price.dart';
 import 'package:nectar_app/features/home/presentation/widgets/custom_show_all_list_tile.dart';
-import 'package:nectar_app/features/home/presentation/widgets/details_image.dart';
+import 'package:nectar_app/features/home/presentation/widgets/product_details_images.dart';
 import 'package:nectar_app/features/home/presentation/widgets/product_name.dart';
 
 class DetailsViewBody extends StatelessWidget {
@@ -16,9 +16,7 @@ class DetailsViewBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          DetailsImage(
-            imgPath: productModel.imgPath,
-          ),
+          ProductDetailsImages(productModel: productModel),
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: Column(

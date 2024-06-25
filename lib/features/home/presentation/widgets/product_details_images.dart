@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nectar_app/core/app/app_images.dart';
+import 'package:nectar_app/core/common/widgets/custom_image_slideshow.dart';
+import 'package:nectar_app/features/home/data/models/product_model.dart';
 
-class DetailsImage extends StatelessWidget {
-  const DetailsImage({
+class ProductDetailsImages extends StatelessWidget {
+  const ProductDetailsImages({
     super.key,
-    required this.imgPath,
+    required this.productModel,
   });
-  final String imgPath;
+  final ProductModel productModel;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +27,8 @@ class DetailsImage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 16,right: 16,top: 30,bottom: 16),
+            padding:
+                const EdgeInsets.only(left: 16, right: 16, top: 30, bottom: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -37,13 +41,31 @@ class DetailsImage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.25,
-            child:
-                FittedBox(fit: BoxFit.scaleDown, child: Image.network(imgPath)),
-          ),
+          CustomImageSlideshow(children: [
+            OneImageOfProduct(imgPath: productModel.imgPath),
+            OneImageOfProduct(imgPath: productModel.imgPath),
+            OneImageOfProduct(imgPath: productModel.imgPath),
+            OneImageOfProduct(imgPath: productModel.imgPath),
+          ]),
         ],
       ),
+    );
+  }
+}
+
+class OneImageOfProduct extends StatelessWidget {
+  const OneImageOfProduct({
+    super.key,
+    required this.imgPath,
+  });
+
+  final String imgPath;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.25,
+      child: FittedBox(fit: BoxFit.scaleDown, child: Image.network(imgPath)),
     );
   }
 }
