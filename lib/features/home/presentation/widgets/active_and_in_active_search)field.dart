@@ -1,10 +1,12 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 
-class CustomSearchField extends StatelessWidget {
-  CustomSearchField({super.key, this.onChanged, this.suffixIcon,this.controller});
+class ActiveSearchField extends StatelessWidget {
+  ActiveSearchField(
+      {super.key, this.onChanged, this.suffixIcon, this.controller});
   void Function(String)? onChanged;
   Widget? suffixIcon;
   TextEditingController? controller;
@@ -40,6 +42,58 @@ class CustomSearchField extends StatelessWidget {
                     size: 30,
                   ),
                   suffixIcon: suffixIcon,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class InActiveSearchField extends StatelessWidget {
+  const InActiveSearchField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final double height = MediaQuery.sizeOf(context).height;
+    return SliverPersistentHeader(
+      pinned: true,
+      delegate: _SliverAppBarDelegate(
+        minHeight: height * 0.2,
+        maxHeight: height * 0.2,
+        child: Column(
+          children: [
+            Container(
+              height: 150,
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              decoration: BoxDecoration(
+                color: AppColors.scaffoldBackground,
+                borderRadius: BorderRadius.circular(24),
+              ),
+              alignment: Alignment.center,
+              child: Container(
+                height: 52,
+                decoration: BoxDecoration(
+                  color: const Color(0xffF2F3F2),
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(
+                      Icons.search,
+                      size: 30,
+                    ),
+                    Text(
+                      'Search Store',
+                      style: Styless.textStyle14,
+                    ),
+                  ],
                 ),
               ),
             ),

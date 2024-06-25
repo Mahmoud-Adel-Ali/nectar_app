@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/features/home/presentation/widgets/best_seller_body.dart';
-import 'package:nectar_app/features/home/presentation/widgets/custom_search_field.dart';
+import 'package:nectar_app/features/home/presentation/widgets/active_and_in_active_search)field.dart';
 import 'package:nectar_app/features/home/presentation/widgets/custom_sliver_appbar.dart';
 import 'package:nectar_app/features/home/presentation/widgets/exclusive_offer_body.dart';
 import 'package:nectar_app/features/home/presentation/widgets/fresh_vige_box.dart';
@@ -16,9 +16,9 @@ class HomeViewBody extends StatelessWidget {
       slivers: [
         CustomSliverAppBar(
           title: Image.asset(AppImages.carrot, height: 30),
-          expandedHeight: 98.26,
+          expandedHeight: 70,
         ),
-        CustomSearchField(),
+        const InActiveSearchField(),
         const FreshVigeBox(),
         const ExclusiveOfferBody(),
         const BestSellerBody(),
