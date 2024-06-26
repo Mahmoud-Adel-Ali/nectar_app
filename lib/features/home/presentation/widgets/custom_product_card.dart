@@ -23,6 +23,7 @@ class CustomProductCard extends StatelessWidget {
       },
       child: Card(
         color: Colors.white,
+        shadowColor: const Color(0xffE2E2E2),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
         elevation: 1,
         child: Padding(
