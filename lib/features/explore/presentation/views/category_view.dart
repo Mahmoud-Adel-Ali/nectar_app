@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/core/common/widgets/custom_product_grid_view.dart';
 import 'package:nectar_app/core/utils/styless.dart';
@@ -11,27 +12,36 @@ class CategoryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: const Icon(Icons.arrow_back_ios),
-        ),
-        title: const Text(
-          'Category',
-          style: Styless.textStyle22bold,
-        ),
-        centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 12.0),
-            child: SvgPicture.asset(AppImages.categoryAction),
-          ),
-        ],
-      ),
       body: CustomScrollView(
         slivers: [
+          SliverAppBar(
+            pinned: true,
+            expandedHeight: 56,
+            floating: false,
+            elevation: 0,
+            backgroundColor: AppColors.scaffoldBackground,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: const Icon(Icons.arrow_back_ios),
+            ),
+            flexibleSpace: FlexibleSpaceBar(
+              // Maintain the same color
+              background: Container(color: AppColors.scaffoldBackground),
+              title: const Text(
+                'Category',
+                style: Styless.textStyle22bold,
+              ),
+              centerTitle: true,
+            ),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 12.0),
+                child: SvgPicture.asset(AppImages.categoryAction),
+              ),
+            ],
+          ),
           SliverToBoxAdapter(
             child: CustomProductGridView(
               seeAll: true,
