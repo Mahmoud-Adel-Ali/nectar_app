@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_images.dart';
+import 'package:nectar_app/core/common/widgets/custom_image_slideshow.dart';
 import 'package:nectar_app/features/home/presentation/widgets/best_seller_body.dart';
 import 'package:nectar_app/features/home/presentation/widgets/active_and_in_active_search)field.dart';
 import 'package:nectar_app/features/home/presentation/widgets/custom_sliver_appbar.dart';
@@ -19,7 +20,17 @@ class HomeViewBody extends StatelessWidget {
           expandedHeight: 70,
         ),
         const InActiveSearchField(),
-        const FreshVigeBox(),
+        // const FreshVigeBox(),
+        const SliverToBoxAdapter(
+          child: CustomImageSlideshow(
+            height: 115,
+            children: [
+              FreshVigeBox(),
+              FreshVigeBox(),
+              FreshVigeBox(),
+            ],
+          ),
+        ),
         const ExclusiveOfferBody(),
         const BestSellerBody(),
         const GroceriesBody(),

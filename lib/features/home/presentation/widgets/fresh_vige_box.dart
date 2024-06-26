@@ -6,26 +6,24 @@ class FreshVigeBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18),
-        child: Container(
-          height: 100,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(
-                AppImages.freshBox,
-              ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 18),
+      child: Container(
+        height: 100,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage(
+              AppImages.freshBox,
             ),
           ),
-          // child: Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-          //   children: [
-          //   Image.asset(AppImages.freshViga1,width: 111,),
-          //   ],
-          // ),
         ),
+        // child: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //   children: [
+        //   Image.asset(AppImages.freshViga1,width: 111,),
+        //   ],
+        // ),
       ),
     );
   }

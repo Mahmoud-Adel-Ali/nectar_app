@@ -41,12 +41,15 @@ class ProductDetailsImages extends StatelessWidget {
               ],
             ),
           ),
-          CustomImageSlideshow(children: [
-            OneImageOfProduct(imgPath: productModel.imgPath),
-            OneImageOfProduct(imgPath: productModel.imgPath),
-            OneImageOfProduct(imgPath: productModel.imgPath),
-            OneImageOfProduct(imgPath: productModel.imgPath),
-          ]),
+          CustomImageSlideshow(
+            height: 220,
+            children: [
+              OneImageOfProduct(imgPath: productModel.imgPath),
+              OneImageOfProduct(imgPath: productModel.imgPath),
+              OneImageOfProduct(imgPath: productModel.imgPath),
+              OneImageOfProduct(imgPath: productModel.imgPath),
+            ],
+          ),
         ],
       ),
     );
