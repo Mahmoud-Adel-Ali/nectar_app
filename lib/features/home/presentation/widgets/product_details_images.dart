@@ -32,12 +32,8 @@ class ProductDetailsImages extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: SvgPicture.asset(AppImages.arrowBack)),
-                GestureDetector(child: SvgPicture.asset(AppImages.logout)),
+                GestureDetector(child: SvgPicture.asset(AppImages.arrowBack)),
+                IconButton(onPressed: (){}, icon: const Icon(Icons.share)),
               ],
             ),
           ),
