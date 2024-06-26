@@ -9,6 +9,7 @@ class CategoriesGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      padding: EdgeInsets.zero,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: 10,
@@ -16,8 +17,8 @@ class CategoriesGridView extends StatelessWidget {
           const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 0.92,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
+        crossAxisSpacing: 5,
+        mainAxisSpacing: 5,
       ),
       itemBuilder: (context, index) => const FindProductCard(
         color: Color(0xffFDE598),

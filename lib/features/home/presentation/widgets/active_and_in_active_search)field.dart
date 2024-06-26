@@ -63,41 +63,37 @@ class InActiveSearchField extends StatelessWidget {
     return SliverPersistentHeader(
       pinned: true,
       delegate: _SliverAppBarDelegate(
-        minHeight: height * 0.2,
-        maxHeight: height * 0.2,
-        child: Column(
-          children: [
-            Container(
-              height: 150,
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              decoration: BoxDecoration(
-                color: AppColors.scaffoldBackground,
-                borderRadius: BorderRadius.circular(24),
-              ),
-              alignment: Alignment.center,
-              child: Container(
-                height: 52,
-                decoration: BoxDecoration(
-                  color: const Color(0xffF2F3F2),
-                  borderRadius: BorderRadius.circular(24),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Icon(
-                      Icons.search,
-                      size: 30,
-                    ),
-                    Text(
-                      'Search Store',
-                      style: Styless.textStyle14,
-                    ),
-                  ],
-                ),
-              ),
+        minHeight: height * 0.1,
+        maxHeight: height * 0.1,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          margin: const EdgeInsets.only(top: 12),
+          decoration: BoxDecoration(
+            color: AppColors.scaffoldBackground,
+            borderRadius: BorderRadius.circular(24),
+          ),
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            height: 52,
+          margin: const EdgeInsets.symmetric(vertical: 10),
+            decoration: BoxDecoration(
+              color: const Color(0xffF2F3F2),
+              borderRadius: BorderRadius.circular(24),
             ),
-          ],
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(
+                  Icons.search,
+                  size: 30,
+                ),
+                Text(
+                  'Search Store',
+                  style: Styless.textStyle14,
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
