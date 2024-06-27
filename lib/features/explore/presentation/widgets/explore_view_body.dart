@@ -17,6 +17,7 @@ class ExploreViewBody extends StatelessWidget {
             style: Styless.textStyle20,
           ),
           expandedHeight: 56,
+          pinned: true,
         ),
         InActiveSearchField(),
         SliverFillRemaining(

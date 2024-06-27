@@ -6,20 +6,24 @@ import 'package:nectar_app/core/app/app_colors.dart';
 class CustomSliverAppBar extends StatelessWidget {
   const CustomSliverAppBar({
     super.key,
-    required this.title, required this.expandedHeight,
+    required this.title,
+    required this.expandedHeight,
+    required this.pinned,
   });
   final Widget title;
   final double expandedHeight;
+  final bool pinned;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
       backgroundColor: AppColors.scaffoldBackground,
       expandedHeight: expandedHeight,
       floating: false,
-      pinned: false,
+      pinned: pinned,
       flexibleSpace: FlexibleSpaceBar(
         title: title,
         centerTitle: true,
+        background: Container(color: AppColors.scaffoldBackground),
       ),
     );
   }

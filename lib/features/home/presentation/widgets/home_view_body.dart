@@ -18,6 +18,7 @@ class HomeViewBody extends StatelessWidget {
         CustomSliverAppBar(
           title: Image.asset(AppImages.carrot, height: 30),
           expandedHeight: 70,
+          pinned: false,
         ),
         const InActiveSearchField(),
         // const FreshVigeBox(),
