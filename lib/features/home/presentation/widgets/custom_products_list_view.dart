@@ -18,11 +18,8 @@ class CustomProductListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: textProductsList.length,
         itemBuilder: (context, index) {
-          return AspectRatio(
-            aspectRatio: 2 / 2.5,
-            child: CustomProductCard(
-              productModel: textProductsList[index],
-            ),
+          return CustomProductCard(
+            productModel: textProductsList[index],
           );
         },
       ),
