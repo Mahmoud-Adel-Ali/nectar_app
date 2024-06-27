@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
+import 'package:nectar_app/core/common/widgets/custom_divider.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
 import 'package:nectar_app/features/home/presentation/widgets/add_product_and_price.dart';
-import 'package:nectar_app/features/home/presentation/widgets/custom_expantion_panal.dart';
+import 'package:nectar_app/features/home/presentation/widgets/nutritions.dart';
+import 'package:nectar_app/features/home/presentation/widgets/product_details.dart';
 import 'package:nectar_app/features/home/presentation/widgets/product_details_images.dart';
 import 'package:nectar_app/features/home/presentation/widgets/product_name.dart';
+import 'package:nectar_app/features/home/presentation/widgets/review.dart';
 
 class DetailsViewBody extends StatelessWidget {
   const DetailsViewBody({super.key, required this.productModel});
@@ -30,7 +32,9 @@ class DetailsViewBody extends StatelessWidget {
           ),
           flexibleSpace: FlexibleSpaceBar(
             // Maintain the same color
-            background: Container(  color: const Color(0xffF2F3F2),),
+            background: Container(
+              color: const Color(0xffF2F3F2),
+            ),
           ),
           actions: [
             IconButton(
@@ -53,27 +57,13 @@ class DetailsViewBody extends StatelessWidget {
                 const SizedBox(height: 20),
                 AddProductAndPrice(price: productModel.price),
                 const SizedBox(height: 20),
-                const SizedBox(
-                    child: Divider(thickness: 1, color: Color(0xffE2E2E2))),
-                const CustomExpansionPanel(
-                  title: 'Product Detail',
-                  subtitle:
-                      'Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.',
-                ),
-                const SizedBox(
-                    child: Divider(thickness: 1, color: Color(0xffE2E2E2))),
-                const CustomExpansionPanel(
-                  title: 'Nutritions',
-                  subtitle: 'Nutritions......................',
-                ),
-                const SizedBox(
-                    child: Divider(thickness: 1, color: Color(0xffE2E2E2))),
-                const CustomExpansionPanel(
-                  title: 'Review',
-                  subtitle: 'Review.....................',
-                ),
+                const CustomDivider(),
+                const ProductDetails(),
+                const CustomDivider(),
+                const Nutritions(),
+                const CustomDivider(),
+                const Review(),
                 const SizedBox(height: 20),
-                // const CustomExpansionPanel(),
                 CustomButtom(
                   onPressed: () {},
                   child: const Text(

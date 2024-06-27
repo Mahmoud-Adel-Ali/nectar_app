@@ -30,10 +30,11 @@ class _AddProductAndPriceState extends State<AddProductAndPrice> {
                 child: Icon(Icons.horizontal_rule),
               ),
             ),
-            const SizedBox(width: 6),
+            const SizedBox(width: 10),
             Container(
-              // width: 50,
-              // height: 50,
+              width: 50,
+              height: 50,
+              alignment: Alignment.center,
               padding:
                   const EdgeInsets.only(top: 5, bottom: 5, right: 12, left: 12),
               decoration: BoxDecoration(
@@ -41,12 +42,14 @@ class _AddProductAndPriceState extends State<AddProductAndPrice> {
                 border: Border.all(color: Colors.grey, width: 1),
                 color: const Color(0xffE2E2E2),
               ),
-              child: Text(
-                selectedPoduct.toString(),
-                style: Styless.textStyle18,
+              child: FittedBox(
+                child: Text(
+                  selectedPoduct.toString(),
+                  style: Styless.textStyle18,
+                ),
               ),
             ),
-            const SizedBox(width: 6),
+            const SizedBox(width: 10),
             GestureDetector(
               onTap: () {
                 setState(() {});

@@ -14,4 +14,5 @@ abstract class AppImages {
   static const logout = 'assets/images/logout.svg';
   static const arrowBack = 'assets/images/arrow_back.svg';
   static const categoryAction = 'assets/images/category_action.svg';
+  static const stare = 'assets/images/stare.svg';
 }

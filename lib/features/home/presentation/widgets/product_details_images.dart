@@ -12,7 +12,7 @@ class ProductDetailsImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.sizeOf(context).height * 0.405,
+      height: MediaQuery.sizeOf(context).height * 0.45,
       decoration: const BoxDecoration(
         color: Color(0xffF2F3F2),
         borderRadius: BorderRadius.only(

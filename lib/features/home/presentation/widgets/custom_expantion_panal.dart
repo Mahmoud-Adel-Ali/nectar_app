@@ -5,9 +5,11 @@ import 'package:nectar_app/core/utils/styless.dart';
 
 class CustomExpansionPanel extends StatefulWidget {
   const CustomExpansionPanel(
-      {super.key, required this.title, required this.subtitle});
+      {super.key, required this.title, required this.subtitle, required this.trailing});
   final String title;
   final String subtitle;
+  final Widget trailing;
+
   @override
   State<CustomExpansionPanel> createState() => _CustomExpansionPanelState();
 }
@@ -19,8 +21,7 @@ class _CustomExpansionPanelState extends State<CustomExpansionPanel> {
   Widget build(BuildContext context) {
     return ExpansionPanelList(
       elevation: 0,
-      expandedHeaderPadding:
-          const EdgeInsets.all(6),
+      expandedHeaderPadding: const EdgeInsets.all(6),
       animationDuration: const Duration(milliseconds: 500),
       expansionCallback: (panelIndex, isExpanded) {
         setState(() {
@@ -31,17 +32,22 @@ class _CustomExpansionPanelState extends State<CustomExpansionPanel> {
         ExpansionPanel(
           canTapOnHeader: true,
           backgroundColor: AppColors.scaffoldBackground,
-          
           headerBuilder: (context, isExpanded) {
-            return Text(
-              widget.title,
-              style: Styless.textStyle16.copyWith(
-                color: const Color(0xff181725),
-              ),
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  widget.title,
+                  style: Styless.textStyle16.copyWith(
+                    color: const Color(0xff181725),
+                  ),
+                ),
+                widget.trailing,
+              ],
             );
           },
           body: Padding(
-            padding: const EdgeInsets.only(left: 8,right: 8,bottom: 16),
+            padding: const EdgeInsets.only(left: 8, right: 8, bottom: 16),
             child: Text(
               widget.subtitle,
               style: Styless.textStyle12,
