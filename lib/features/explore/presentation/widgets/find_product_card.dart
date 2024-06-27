@@ -29,7 +29,7 @@ class FindProductCard extends StatelessWidget {
         elevation: 0.3,
         shape: RoundedRectangleBorder(
           side: BorderSide(width: 2, color: borderSideColor),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(18),
         ),
         color: color,
         child: Column(
