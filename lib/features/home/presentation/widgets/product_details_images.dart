@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/core/common/widgets/custom_image_slideshow.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
 
@@ -23,29 +21,13 @@ class ProductDetailsImages extends StatelessWidget {
         ),
       ),
       padding: const EdgeInsets.all(18),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+      child: CustomImageSlideshow(
+        height: 220,
         children: [
-          Padding(
-            padding:
-                const EdgeInsets.only(left: 16, right: 16, top: 30, bottom: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(child: SvgPicture.asset(AppImages.arrowBack)),
-                IconButton(onPressed: (){}, icon: const Icon(Icons.share)),
-              ],
-            ),
-          ),
-          CustomImageSlideshow(
-            height: 220,
-            children: [
-              OneImageOfProduct(imgPath: productModel.imgPath),
-              OneImageOfProduct(imgPath: productModel.imgPath),
-              OneImageOfProduct(imgPath: productModel.imgPath),
-              OneImageOfProduct(imgPath: productModel.imgPath),
-            ],
-          ),
+          OneImageOfProduct(imgPath: productModel.imgPath),
+          OneImageOfProduct(imgPath: productModel.imgPath),
+          OneImageOfProduct(imgPath: productModel.imgPath),
+          OneImageOfProduct(imgPath: productModel.imgPath),
         ],
       ),
     );
