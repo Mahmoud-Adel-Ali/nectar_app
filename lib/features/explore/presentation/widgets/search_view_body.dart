@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/core/common/widgets/custom_product_grid_view.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
-import 'package:nectar_app/features/home/presentation/widgets/active_and_in_active_search)field.dart';
+import 'package:nectar_app/features/home/presentation/widgets/active_search_field.dart';
 import 'package:nectar_app/test_products_list.dart';
 
 class SearchViewBody extends StatefulWidget {

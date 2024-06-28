@@ -14,36 +14,34 @@ class _BestSellerBodyState extends State<BestSellerBody> {
   bool seeAll = false;
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20, right: 18, left: 18),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Best Selling',
-                  style: Styless.textStyle24,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 20, right: 18, left: 18),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Best Selling',
+                style: Styless.textStyle24,
+              ),
+              TextButton(
+                onPressed: () {
+                  seeAll = !seeAll;
+                  setState(() {});
+                },
+                child: Text(
+                  seeAll ? 'close' : "see all",
+                  style: Styless.textStyle16
+                      .copyWith(color: AppColors.mainColor),
                 ),
-                TextButton(
-                  onPressed: () {
-                    seeAll = !seeAll;
-                    setState(() {});
-                  },
-                  child: Text(
-                    seeAll ? 'close' : "see all",
-                    style: Styless.textStyle16
-                        .copyWith(color: AppColors.mainColor),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-          const CustomProductListView(),
-        ],
-      ),
+        ),
+        const CustomProductListView(),
+      ],
     );
   }
 }

@@ -8,11 +8,12 @@ class CustomSliverAppBar extends StatelessWidget {
     super.key,
     required this.title,
     required this.expandedHeight,
-    required this.pinned,
+    required this.pinned, required this.toolbarHeight,
   });
   final Widget title;
   final double expandedHeight;
   final bool pinned;
+  final double toolbarHeight;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
@@ -20,10 +21,12 @@ class CustomSliverAppBar extends StatelessWidget {
       expandedHeight: expandedHeight,
       floating: false,
       pinned: pinned,
+      toolbarHeight:toolbarHeight ,
       flexibleSpace: FlexibleSpaceBar(
         title: title,
         centerTitle: true,
         background: Container(color: AppColors.scaffoldBackground),
+        expandedTitleScale:1.3,
       ),
     );
   }

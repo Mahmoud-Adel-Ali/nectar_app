@@ -14,33 +14,31 @@ class _ExclusiveOfferBodyState extends State<ExclusiveOfferBody> {
   bool seeAll = false;
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Column(children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 20, right: 18, left: 18),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                'Exclusive Offer',
-                style: Styless.textStyle24,
+    return Column(children: [
+      Padding(
+        padding: const EdgeInsets.only(top: 20, right: 18, left: 18),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'Exclusive Offer',
+              style: Styless.textStyle24,
+            ),
+            TextButton(
+              onPressed: () {
+                seeAll = !seeAll;
+                setState(() {});
+              },
+              child: Text(
+                seeAll ? 'close' : "see all",
+                style:
+                    Styless.textStyle16.copyWith(color: AppColors.mainColor),
               ),
-              TextButton(
-                onPressed: () {
-                  seeAll = !seeAll;
-                  setState(() {});
-                },
-                child: Text(
-                  seeAll ? 'close' : "see all",
-                  style:
-                      Styless.textStyle16.copyWith(color: AppColors.mainColor),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
-        const CustomProductListView(),
-      ],),
-    );
+      ),
+      const CustomProductListView(),
+    ],);
   }
 }
