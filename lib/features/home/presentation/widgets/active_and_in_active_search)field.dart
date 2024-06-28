@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/explore/presentation/views/search_view.dart';
 
 class ActiveSearchField extends StatelessWidget {
   ActiveSearchField(
@@ -13,17 +14,7 @@ class ActiveSearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final double height = MediaQuery.sizeOf(context).height;
-    return SliverAppBar(
-      backgroundColor: AppColors.scaffoldBackground,
-      floating: false,
-      pinned: true,
-      toolbarHeight: 75,
-      flexibleSpace: FlexibleSpaceBar(
-        centerTitle: true,
-        background: Container(color: AppColors.scaffoldBackground),
-        title: GestureDetector(
-          onTap: () {},
-          child: Container(
+    return Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             margin: const EdgeInsets.only(top: 12),
             decoration: BoxDecoration(
@@ -54,10 +45,7 @@ class ActiveSearchField extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ),
-      ),
-    );
+          );
   }
 }
 
@@ -78,7 +66,10 @@ class InActiveSearchField extends StatelessWidget {
         centerTitle: true,
         background: Container(color: AppColors.scaffoldBackground),
         title: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SearchView()));
+          },
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             margin: const EdgeInsets.only(top: 12),

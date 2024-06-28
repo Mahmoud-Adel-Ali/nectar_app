@@ -28,7 +28,7 @@ class CustomProductCard extends StatelessWidget {
           shadowColor: const Color(0xffE2E2E2),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-          elevation: 1,
+          elevation: 3,
           child: Padding(
             padding: const EdgeInsets.all(12.0),
             child: Column(
