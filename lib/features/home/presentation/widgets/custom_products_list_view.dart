@@ -11,15 +11,21 @@ class CustomProductListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 300,
-      width: MediaQuery.sizeOf(context).width - 32,
+      width: MediaQuery.sizeOf(context).width,
       child: ListView.builder(
-        // to hidding white shadow form two side
-        physics: const BouncingScrollPhysics(),
+        // physics: const BouncingScrollPhysics(),
+        padding: EdgeInsets.zero,
         scrollDirection: Axis.horizontal,
         itemCount: textProductsList.length,
         itemBuilder: (context, index) {
-          return CustomProductCard(
-            productModel: textProductsList[index],
+          return Padding(
+            padding: EdgeInsets.only(
+              left: index == 0 ? 16 : 0,
+              right: index == textProductsList.length - 1 ? 16 : 0,
+            ),
+            child: CustomProductCard(
+              productModel: textProductsList[index],
+            ),
           );
         },
       ),

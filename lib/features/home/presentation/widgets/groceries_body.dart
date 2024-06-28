@@ -4,15 +4,9 @@ import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/presentation/widgets/custom_groceries_card.dart';
 import 'package:nectar_app/features/home/presentation/widgets/custom_products_list_view.dart';
 
-class GroceriesBody extends StatefulWidget {
+class GroceriesBody extends StatelessWidget {
   const GroceriesBody({super.key});
 
-  @override
-  State<GroceriesBody> createState() => _GroceriesBodyState();
-}
-
-class _GroceriesBodyState extends State<GroceriesBody> {
-  bool seeAll = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,14 +22,11 @@ class _GroceriesBodyState extends State<GroceriesBody> {
                 style: Styless.textStyle24,
               ),
               TextButton(
-                onPressed: () {
-                  seeAll = !seeAll;
-                  setState(() {});
-                },
+                onPressed: () {},
                 child: Text(
-                  seeAll ? 'close' : "see all",
-                  style: Styless.textStyle16
-                      .copyWith(color: AppColors.mainColor),
+                  "see all",
+                  style:
+                      Styless.textStyle16.copyWith(color: AppColors.mainColor),
                 ),
               ),
             ],

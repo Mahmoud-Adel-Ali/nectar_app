@@ -3,15 +3,9 @@ import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/presentation/widgets/custom_products_list_view.dart';
 
-class BestSellerBody extends StatefulWidget {
+class BestSellerBody extends StatelessWidget {
   const BestSellerBody({super.key});
 
-  @override
-  State<BestSellerBody> createState() => _BestSellerBodyState();
-}
-
-class _BestSellerBodyState extends State<BestSellerBody> {
-  bool seeAll = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,11 +22,9 @@ class _BestSellerBodyState extends State<BestSellerBody> {
               ),
               TextButton(
                 onPressed: () {
-                  seeAll = !seeAll;
-                  setState(() {});
                 },
                 child: Text(
-                  seeAll ? 'close' : "see all",
+                  "see all",
                   style: Styless.textStyle16
                       .copyWith(color: AppColors.mainColor),
                 ),

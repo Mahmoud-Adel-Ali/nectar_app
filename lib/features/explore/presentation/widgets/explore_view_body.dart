@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/explore/presentation/widgets/categories_grid_view.dart';
-import 'package:nectar_app/features/home/presentation/widgets/custom_sliver_appbar.dart';
 import 'package:nectar_app/features/home/presentation/widgets/in_active_search_field.dart';
 
 class ExploreViewBody extends StatelessWidget {
