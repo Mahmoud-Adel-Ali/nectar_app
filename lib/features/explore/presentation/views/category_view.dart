@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
-import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/core/common/widgets/custom_product_grid_view.dart';
+import 'package:nectar_app/core/common/widgets/go_to_filters_icon.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/test_products_list.dart';
 
@@ -25,12 +24,10 @@ class CategoryView extends StatelessWidget {
         flexibleSpace: FlexibleSpaceBar(
           background: Container(color: AppColors.scaffoldBackground),
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 12.0),
-            child: SvgPicture.asset(AppImages.categoryAction),
-          ),
-        ],
+        actions: const [Padding(
+          padding: EdgeInsets.all(8.0),
+          child: GoToFiltersIcon(),
+        )],
       ),
       body: Column(
         children: [

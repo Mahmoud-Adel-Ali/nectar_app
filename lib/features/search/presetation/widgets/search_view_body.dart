@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/core/common/widgets/custom_product_grid_view.dart';
+import 'package:nectar_app/core/common/widgets/go_to_filters_icon.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
 import 'package:nectar_app/features/home/presentation/widgets/active_search_field.dart';
@@ -61,7 +60,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                           ),
                   ),
                 ),
-                SvgPicture.asset(AppImages.categoryAction)
+                const GoToFiltersIcon(),
               ],
             ),
           ),
