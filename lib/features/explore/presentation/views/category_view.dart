@@ -12,44 +12,29 @@ class CategoryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            pinned: true,
-            expandedHeight: 56,
-            floating: false,
-            elevation: 0,
-            backgroundColor: AppColors.scaffoldBackground,
-            leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: const Icon(Icons.arrow_back_ios),
-            ),
-            flexibleSpace: FlexibleSpaceBar(
-              // Maintain the same color
-              background: Container(color: AppColors.scaffoldBackground),
-              title: const Text(
-                'Category',
-                style: Styless.textStyle22bold,
-              ),
-              centerTitle: true,
-            ),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 12.0),
-                child: SvgPicture.asset(AppImages.categoryAction),
-              ),
-            ],
+      appBar: AppBar(
+        backgroundColor: AppColors.scaffoldBackground,
+        title: const Text('Category', style: Styless.textStyle22bold),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: const Icon(Icons.arrow_back_ios),
+        ),
+        flexibleSpace: FlexibleSpaceBar(
+          background: Container(color: AppColors.scaffoldBackground),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: SvgPicture.asset(AppImages.categoryAction),
           ),
-          SliverToBoxAdapter(
-            child: CustomProductGridView(
-              productsList: textProductsList,
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: SizedBox(height: 20),
-          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          CustomProductGridView(productsList: textProductsList),
         ],
       ),
     );
