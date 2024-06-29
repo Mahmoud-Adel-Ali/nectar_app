@@ -12,6 +12,7 @@ class CustomProductGridView extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(18.0),
         child: GridView.builder(
+          padding: EdgeInsets.zero,
           itemCount: productsList.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,

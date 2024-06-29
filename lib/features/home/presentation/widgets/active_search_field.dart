@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable, unused_element
 
 import 'package:flutter/material.dart';
-import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 
 class ActiveSearchField extends StatelessWidget {
@@ -14,37 +13,28 @@ class ActiveSearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     // final double height = MediaQuery.sizeOf(context).height;
     return Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            margin: const EdgeInsets.only(top: 12),
-            decoration: BoxDecoration(
-              color: AppColors.scaffoldBackground,
-              borderRadius: BorderRadius.circular(24),
-            ),
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 50,
-              margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 3),
-              decoration: BoxDecoration(
-                color: const Color(0xffF2F3F2),
-                borderRadius: BorderRadius.circular(24),
-              ),
-              child: TextField(
-                onChanged: onChanged,
-                controller: controller,
-                style: Styless.textStyle18,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Search Store",
-                  hintStyle: Styless.textStyle16,
-                  prefixIcon: const Icon(
-                    Icons.search,
-                    size: 30,
-                  ),
-                  suffixIcon: suffixIcon,
-                ),
-              ),
-            ),
-          );
+      height: 50,
+      margin: const EdgeInsets.symmetric(horizontal: 3),
+      decoration: BoxDecoration(
+        color: const Color(0xffF2F3F2),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: TextField(
+        onChanged: onChanged,
+        controller: controller,
+        style: Styless.textStyle18,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: "Search Store",
+          hintStyle: Styless.textStyle16,
+          prefixIcon: const Icon(
+            Icons.search,
+            size: 30,
+          ),
+          suffixIcon: suffixIcon,
+        ),
+      ),
+    );
   }
 }
 

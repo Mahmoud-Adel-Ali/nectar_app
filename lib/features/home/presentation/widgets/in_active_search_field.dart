@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/styless.dart';
-import 'package:nectar_app/features/explore/presentation/views/search_view.dart';
+import 'package:nectar_app/features/search/presetation/views/search_view.dart';
 
 class InActiveSearchField extends StatelessWidget {
   const InActiveSearchField({
