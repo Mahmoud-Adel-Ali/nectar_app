@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nectar_app/core/app/app_images.dart';
 import 'package:nectar_app/core/common/widgets/custom_product_grid_view.dart';
+import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
 import 'package:nectar_app/features/home/presentation/widgets/active_search_field.dart';
 import 'package:nectar_app/test_products_list.dart';
@@ -50,6 +51,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                             onPressed: () {
                               controller.clear();
                               answerdList.clear();
+                              searchText = '';
                               setState(() {});
                             },
                             icon: const Icon(
@@ -64,10 +66,18 @@ class _SearchViewBodyState extends State<SearchViewBody> {
             ),
           ),
         ),
-        CustomProductGridView(
-          productsList:
-              answerdList.isEmpty ? textProductsList : answerdList,
-        ),
+        searchText.isNotEmpty && answerdList.isEmpty
+            ? const Expanded(
+                child: Center(
+                    child: Text(
+                'No results ; \n search about product.',
+                style: Styless.textStyle24,
+                textAlign: TextAlign.center,
+              )))
+            : CustomProductGridView(
+                productsList:
+                    answerdList.isEmpty ? textProductsList : answerdList,
+              ),
       ],
     );
   }
