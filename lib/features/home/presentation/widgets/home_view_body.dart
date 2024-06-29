@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_app/core/common/widgets/custom_image_slideshow.dart';
+import 'package:nectar_app/core/common/widgets/custom_carousel_slider.dart';
 import 'package:nectar_app/features/home/presentation/widgets/best_seller_body.dart';
 import 'package:nectar_app/features/home/presentation/widgets/exclusive_offer_body.dart';
 import 'package:nectar_app/features/home/presentation/widgets/fresh_vige_box.dart';
@@ -15,9 +15,9 @@ class HomeViewBody extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: const [
-        CustomImageSlideshow(
-          height: 120,
-          children: [
+        CustomCarouselSlider(
+          height: 114.99,
+          items: [
             FreshVigeBox(),
             FreshVigeBox(),
             FreshVigeBox(),

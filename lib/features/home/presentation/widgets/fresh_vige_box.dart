@@ -9,7 +9,8 @@ class FreshVigeBox extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18),
       child: Container(
-        height: 100,
+        height: 114.99,
+        // width: MediaQuery.sizeOf(context).width ,
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,

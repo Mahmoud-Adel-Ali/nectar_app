@@ -22,7 +22,7 @@ class ProductDetailsImages extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(18),
       child: CustomImageSlideshow(
-        height: 220,
+        height: MediaQuery.sizeOf(context).width * 0.35,
         children: [
           OneImageOfProduct(imgPath: productModel.imgPath),
           OneImageOfProduct(imgPath: productModel.imgPath),
