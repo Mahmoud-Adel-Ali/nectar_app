@@ -62,7 +62,6 @@ class _SearchViewBodyState extends State<SearchViewBody> {
         Expanded(
           child: SingleChildScrollView(
             child: CustomProductGridView(
-              seeAll: true,
               productsList:
                   answerdList.isEmpty ? textProductsList : answerdList,
             ),

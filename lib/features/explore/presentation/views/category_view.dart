@@ -44,7 +44,6 @@ class CategoryView extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: CustomProductGridView(
-              seeAll: true,
               productsList: textProductsList,
             ),
           ),

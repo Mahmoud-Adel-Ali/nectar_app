@@ -16,7 +16,7 @@ class NectarApp extends StatelessWidget {
     // Change the status bar color and brightness
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        statusBarColor: AppColors.mainColor,
+        statusBarColor: Colors.blue,
         statusBarBrightness: Brightness.light,
         statusBarIconBrightness: Brightness.light,
       ),

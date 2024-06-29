@@ -10,7 +10,7 @@ class CustomProductListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: 265,
       width: MediaQuery.sizeOf(context).width,
       child: ListView.builder(
         // physics: const BouncingScrollPhysics(),
@@ -21,7 +21,7 @@ class CustomProductListView extends StatelessWidget {
           return Padding(
             padding: EdgeInsets.only(
               left: index == 0 ? 16 : 0,
-              right: index == textProductsList.length - 1 ? 16 : 0,
+              right: 16,
             ),
             child: CustomProductCard(
               productModel: textProductsList[index],
