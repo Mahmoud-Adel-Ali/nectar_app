@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/helper/font_family_helper.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/filters/presentation/widgets/filters_view_body.dart';
 
 class FiltersView extends StatelessWidget {
   const FiltersView({super.key});
@@ -24,9 +25,12 @@ class FiltersView extends StatelessWidget {
           ),
         ),
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.close, color: Color(0xff181725))),
       ),
+      body: const FiltersViewBody(),
     );
   }
 }
