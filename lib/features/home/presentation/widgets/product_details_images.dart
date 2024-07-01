@@ -46,7 +46,14 @@ class OneImageOfProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.25,
-      child: FittedBox(fit: BoxFit.scaleDown, child: Image.network(imgPath)),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Image.network(
+          imgPath.toString(),
+          errorBuilder: ((context, error, stackTrace) =>
+              const Icon(Icons.account_circle)),
+        ),
+      ),
     );
   }
 }

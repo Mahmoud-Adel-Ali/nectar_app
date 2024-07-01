@@ -20,7 +20,11 @@ class CustomGroceriesCard extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(18.0),
-              child: Image.network(imgPath),
+              child: Image.network(
+                imgPath.toString(),
+                errorBuilder: ((context, error, stackTrace) =>
+                    const Icon(Icons.account_circle)),
+              ),
             ),
             Text(text, style: Styless.textStyle20)
           ],

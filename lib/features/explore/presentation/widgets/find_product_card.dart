@@ -37,8 +37,9 @@ class FindProductCard extends StatelessWidget {
           children: [
             const SizedBox(height: 10),
             Image.network(
-              imgPath,
-              height: 80,
+              imgPath.toString(),
+              errorBuilder: ((context, error, stackTrace) =>
+                  const Icon(Icons.account_circle)),
             ),
             const SizedBox(height: 10),
             Text(

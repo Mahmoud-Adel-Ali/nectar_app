@@ -33,8 +33,10 @@ class CustomProductCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Image.network(
-              productModel.imgPath,
+              productModel.imgPath.toString(),
               height: 80,
+              errorBuilder: ((context, error, stackTrace) =>
+                  const Icon(Icons.account_circle)),
             ),
             ListTile(
               contentPadding: EdgeInsets.zero,
