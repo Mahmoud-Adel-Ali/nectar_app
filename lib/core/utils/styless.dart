@@ -26,6 +26,12 @@ abstract class Styless {
     fontWeight: FontWeight.w600,
     color: Color(0xff181725),
   );
+  static const TextStyle textStyle20bold = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+    color: Color(0xff181725),
+    fontFamily: FontFamilyHelper.gilroyBold
+  );
   static const TextStyle textStyle22bold = TextStyle(
     fontSize: 22,
     fontWeight: FontWeight.w600,

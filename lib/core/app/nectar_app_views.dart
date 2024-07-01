@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
+import 'package:nectar_app/features/cart/presentation/views/cart_view.dart';
 import 'package:nectar_app/features/explore/presentation/views/explore_view.dart';
 import 'package:nectar_app/features/home/presentation/views/home_view.dart';
 
@@ -65,7 +66,7 @@ class _NectarAppViewsState extends State<NectarAppViews> {
         children: const [
           HomeView(),
           ExploreView(),
-          SizedBox(),
+          CartView(),
           SizedBox(),
           SizedBox(),
         ],
