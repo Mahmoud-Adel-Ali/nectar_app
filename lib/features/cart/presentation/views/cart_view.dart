@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/cart/presentation/widgets/cart_item.dart';
+import 'package:nectar_app/test_products_list.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});
@@ -16,6 +18,7 @@ class CartView extends StatelessWidget {
           background: Container(color: AppColors.scaffoldBackground),
         ),
       ),
+      body: CartItem(item: textProductsList[0]),
     );
   }
 }
