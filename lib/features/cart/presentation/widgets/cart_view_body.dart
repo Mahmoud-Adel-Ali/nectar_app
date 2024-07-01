@@ -29,9 +29,16 @@ class CartViewBody extends StatelessWidget {
                   const Expanded(flex: 4, child: SizedBox(width: 25)),
                   const Text('Go to Checkout', style: Styless.textStyle16),
                   const Expanded(flex: 3, child: SizedBox(width: 25)),
-                  Text('\$12.96',
-                      style: Styless.textStyle12
-                          .copyWith(color: const Color(0xffFCFCFC))),
+                  Container(
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xff489E67),
+                    ),
+                    child: Text('\$12.96',
+                        style: Styless.textStyle12
+                            .copyWith(color: const Color(0xffFCFCFC))),
+                  ),
                 ],
               )),
         )
