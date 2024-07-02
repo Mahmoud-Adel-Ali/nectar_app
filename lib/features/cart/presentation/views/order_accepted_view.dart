@@ -54,7 +54,7 @@ class OrderAcceptedView extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.pop(context);
               },
-              color: const Color(0xffFFFFFF),
+              color: const Color(0xffF9FAF9),
               textColor: AppColors.mainColor,
               child: const Text(
                 'Back to home',
