@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/common/widgets/custom_arrow_right_button.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
 
@@ -32,10 +33,7 @@ class FavoruritesViewItem extends StatelessWidget {
                 ),
               ),
               Text('\$${item.price}', style: Styless.textStyle16),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.keyboard_arrow_right_outlined,
-                      size: 30)),
+              CustomArrowRightButton(onPressed: (){}),
             ],
           ),
           const Divider(color: Color(0xffE2E2E2), thickness: 1)
