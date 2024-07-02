@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/cart/presentation/views/order_accepted_view.dart';
 import 'package:nectar_app/features/cart/presentation/widgets/checkout_description.dart';
 import 'package:nectar_app/features/cart/presentation/widgets/checkout_header.dart';
 
@@ -29,9 +30,18 @@ checkoutBottomSheet(BuildContext context) {
               const Divider(color: Color(0xffE2E2E2), thickness: 1),
               const CheckoutItems(),
               const CheckoutDescription(),
-              const Expanded(child: SizedBox(height: 30,)),
+              const Expanded(
+                  child: SizedBox(
+                height: 30,
+              )),
               CustomButtom(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const OrderAcceptedView(),
+                      ));
+                },
                 child: const Text(
                   'Place Order',
                   style: Styless.textStyle18,
