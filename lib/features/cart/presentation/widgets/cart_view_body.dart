@@ -13,6 +13,7 @@ class CartViewBody extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
+          const Divider(color: Color(0xffE2E2E2), thickness: 1),
           Expanded(
             child: ListView.builder(
               itemCount: textProductsList.length,
@@ -22,7 +23,7 @@ class CartViewBody extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 24,right: 24, bottom: 16),
+            padding: const EdgeInsets.only(left: 24, right: 24, bottom: 16),
             child: CustomButtom(
                 onPressed: () {},
                 child: Row(
@@ -35,7 +36,7 @@ class CartViewBody extends StatelessWidget {
                       padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xff489E67),
+                        color: const Color(0xff489E67),
                       ),
                       child: Text('\$12.96',
                           style: Styless.textStyle12

@@ -7,31 +7,40 @@ class FavoruritesViewItem extends StatelessWidget {
   final ProductModel item;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          height: 100,
-          width: 100,
-          child: Image.network(
-            item.imgPath.toString(),
-            errorBuilder: ((context, error, stackTrace) =>
-                const Icon(Icons.account_circle)),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              SizedBox(
+                height: 100,
+                width: 100,
+                child: Image.network(
+                  item.imgPath.toString(),
+                  errorBuilder: ((context, error, stackTrace) =>
+                      const Icon(Icons.account_circle)),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                flex: 10,
+                child: ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(item.name, style: Styless.textStyle16Bold),
+                  subtitle: Text(item.description, style: Styless.textStyle14),
+                ),
+              ),
+              Text('\$${item.price}', style: Styless.textStyle16),
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.keyboard_arrow_right_outlined,
+                      size: 30)),
+            ],
           ),
-        ),
-        const SizedBox(width: 10),
-        Expanded(
-          flex: 10,
-          child: ListTile(
-            contentPadding: EdgeInsets.zero,
-            title: Text(item.name, style: Styless.textStyle16Bold),
-            subtitle: Text(item.description, style: Styless.textStyle14),
-          ),
-        ),
-        Text('\$${item.price}', style: Styless.textStyle16),
-        IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.keyboard_arrow_right_outlined, size: 30)),
-      ],
+          const Divider(color: Color(0xffE2E2E2), thickness: 1)
+        ],
+      ),
     );
   }
 }
