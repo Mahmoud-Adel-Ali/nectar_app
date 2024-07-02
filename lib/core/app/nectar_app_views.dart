@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/features/cart/presentation/views/cart_view.dart';
 import 'package:nectar_app/features/explore/presentation/views/explore_view.dart';
+import 'package:nectar_app/features/favorites/presentation/views/favorites_view.dart';
 import 'package:nectar_app/features/home/presentation/views/home_view.dart';
 
 class NectarAppViews extends StatefulWidget {
@@ -67,7 +68,7 @@ class _NectarAppViewsState extends State<NectarAppViews> {
           HomeView(),
           ExploreView(),
           CartView(),
-          SizedBox(),
+          FavoritesView(),
           SizedBox(),
         ],
       ),
