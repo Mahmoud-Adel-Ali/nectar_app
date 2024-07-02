@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/cart/presentation/widgets/cart_item.dart';
+import 'package:nectar_app/features/cart/presentation/widgets/checkout_bottom_sheet.dart';
 import 'package:nectar_app/test_products_list.dart';
 
 class CartViewBody extends StatelessWidget {
@@ -25,7 +26,9 @@ class CartViewBody extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 24, right: 24, bottom: 16),
             child: CustomButtom(
-                onPressed: () {},
+                onPressed: () {
+                  checkoutBottomSheet(context);
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
