@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/features/account/presentation/widgets/account_settings.dart';
 import 'package:nectar_app/features/account/presentation/widgets/user_account.dart';
 
 class AccountViewBody extends StatelessWidget {
@@ -15,7 +16,8 @@ class AccountViewBody extends StatelessWidget {
             name: 'Afsar Hossen',
             email: 'Imshuvo97@gmail.com',
           ),
-          Divider(thickness: 1,color: Color(0xffE2E2E2),),
+          Divider(thickness: 1, color: Color(0xffE2E2E2)),
+          AccountSettings(),
         ],
       ),
     );

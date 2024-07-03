@@ -17,4 +17,12 @@ abstract class AppImages {
   static const stare = 'assets/images/stare.svg';
   static const payment = 'assets/images/payment.svg';
   static const errorDialogImage = 'assets/images/error_dialog.png';
+  static const orderIcon = 'assets/images/Orders icon.png';
+  static const myDetailsIcon = 'assets/images/My Details icon.png';
+  static const deliceryAddress = 'assets/images/Delicery address.png';
+  static const paymentMethods = 'assets/images/Payment Methods.png';
+  static const ptomoCord = 'assets/images/Promo Cord icon.png';
+  static const bell = 'assets/images/Bell icon.png';
+  static const help = 'assets/images/help icon.png';
+  static const about = 'assets/images/about icon.png';
 }

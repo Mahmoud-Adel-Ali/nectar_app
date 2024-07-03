@@ -21,6 +21,7 @@ abstract class Styless {
   static const TextStyle textStyle18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
+    color: Color(0xff181725),
   );
   static const TextStyle textStyle20 = TextStyle(
     fontSize: 20,
@@ -40,23 +41,28 @@ abstract class Styless {
   static const TextStyle textStyle24 = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w600,
+    color: Color(0xff181725),
   );
   static const TextStyle textStyle26 = TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.w600,
+    color: Color(0xff181725),
   );
   static const TextStyle textStyle28 = TextStyle(
     fontSize: 28,
     fontWeight: FontWeight.w600,
+    color: Color(0xff181725),
   );
   static const TextStyle textStyle24Bold = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
-    fontFamily: FontFamilyHelper.gilroyBold
+    fontFamily: FontFamilyHelper.gilroyBold,
+    color: Color(0xff181725),
   );
   static const TextStyle textStyle16Bold = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
-    fontFamily: FontFamilyHelper.gilroyBold
+    fontFamily: FontFamilyHelper.gilroyBold,
+    color: Color(0xff181725),
   );
 }
