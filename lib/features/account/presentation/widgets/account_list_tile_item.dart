@@ -16,16 +16,18 @@ class AccountListTileItem extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.only(left: 24.0,right: 8),
           child: ListTile(
+            contentPadding: EdgeInsets.zero,
             title: Text(title, style: Styless.textStyle18),
             leading: Image.asset(iconImage),
             trailing: IconButton(
-                onPressed: onPressed,
-                icon: const Icon(
-                  Icons.keyboard_arrow_right_rounded,
-                  size: 39,
-                )),
+              onPressed: onPressed,
+              icon: const Icon(
+                Icons.keyboard_arrow_right_rounded,
+                size: 39,
+              ),
+            ),
           ),
         ),
         const Divider(thickness: 1, color: Color(0xffE2E2E2)),

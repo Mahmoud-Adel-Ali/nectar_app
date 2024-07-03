@@ -11,6 +11,20 @@ class AccountSettings extends StatelessWidget {
       children: [
         AccountListTileItem(
             title: 'Order', iconImage: AppImages.orderIcon, onPressed: () {}),
+        AccountListTileItem(
+            title: 'My Details', iconImage: AppImages.myDetailsIcon, onPressed: () {}),
+        AccountListTileItem(
+            title: 'Delivery Address', iconImage: AppImages.deliceryAddress, onPressed: () {}),
+        AccountListTileItem(
+            title: 'Payment Methods', iconImage: AppImages.paymentMethods, onPressed: () {}),
+        AccountListTileItem(
+            title: 'Promo Cord', iconImage: AppImages.ptomoCord, onPressed: () {}),
+        AccountListTileItem(
+            title: 'Notifecations', iconImage: AppImages.bell, onPressed: () {}),
+        AccountListTileItem(
+            title: 'Help', iconImage: AppImages.help, onPressed: () {}),
+        AccountListTileItem(
+            title: 'About', iconImage: AppImages.about, onPressed: () {}),
       ],
     );
   }
