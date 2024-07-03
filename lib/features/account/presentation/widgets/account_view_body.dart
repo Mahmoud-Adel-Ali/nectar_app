@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/features/account/presentation/widgets/account_settings.dart';
 import 'package:nectar_app/features/account/presentation/widgets/user_account.dart';
 
+import 'logout_button.dart';
+
 class AccountViewBody extends StatelessWidget {
   const AccountViewBody({super.key});
 
@@ -18,6 +20,8 @@ class AccountViewBody extends StatelessWidget {
           ),
           Divider(thickness: 1, color: Color(0xffE2E2E2)),
           AccountSettings(),
+          Expanded(child: SizedBox(height: 25)),
+          LogoutButton(),
         ],
       ),
     );
