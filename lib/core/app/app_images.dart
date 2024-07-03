@@ -16,4 +16,5 @@ abstract class AppImages {
   static const categoryAction = 'assets/images/category_action.svg';
   static const stare = 'assets/images/stare.svg';
   static const payment = 'assets/images/payment.svg';
+  static const errorDialogImage = 'assets/images/error_dialog.png';
 }
