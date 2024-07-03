@@ -13,24 +13,27 @@ class UserAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: CircleAvatar(
-        radius: 27,
-        backgroundImage: NetworkImage(imgPath),
-      ),
-      title: Row(
-        children: [
-          Text(name, style: Styless.textStyle20bold),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.mode_edit_outlined,
-              color: AppColors.mainColor,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListTile(
+        leading: CircleAvatar(
+          radius: 27,
+          backgroundImage: NetworkImage(imgPath),
+        ),
+        title: Row(
+          children: [
+            Text(name, style: Styless.textStyle20bold),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.mode_edit_outlined,
+                color: AppColors.mainColor,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
+        subtitle: Text(email, style: Styless.textStyle16),
       ),
-      subtitle: Text(email, style: Styless.textStyle16),
     );
   }
 }
