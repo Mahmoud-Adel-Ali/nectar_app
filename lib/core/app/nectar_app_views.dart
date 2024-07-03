@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
+import 'package:nectar_app/features/account/presentation/views/account_view.dart';
 import 'package:nectar_app/features/cart/presentation/views/cart_view.dart';
 import 'package:nectar_app/features/explore/presentation/views/explore_view.dart';
 import 'package:nectar_app/features/favorites/presentation/views/favorites_view.dart';
@@ -69,7 +70,7 @@ class _NectarAppViewsState extends State<NectarAppViews> {
           ExploreView(),
           CartView(),
           FavoritesView(),
-          SizedBox(),
+          AccountView(),
         ],
       ),
     );
