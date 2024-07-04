@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/common/widgets/custom_cached_network_image.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
 import 'package:nectar_app/features/home/presentation/widgets/add_product_and_price.dart';
@@ -16,15 +17,9 @@ class CartItem extends StatelessWidget {
           child: Row(
             children: [
               SizedBox(
-                width: 100,
                 height: 100,
-                child: FittedBox(
-                  child: Image.network(
-                    item.imgPath.toString(),
-                    errorBuilder: ((context, error, stackTrace) =>
-                        const Icon(Icons.account_circle)),
-                  ),
-                ),
+                width: 100,
+                child: CustomCachedNetworkImage(imgUrl: item.imgPath),
               ),
               const SizedBox(width: 16),
               Expanded(

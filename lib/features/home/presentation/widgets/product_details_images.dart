@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/common/widgets/custom_cached_network_image.dart';
 import 'package:nectar_app/core/common/widgets/custom_image_slideshow.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
 
@@ -46,14 +47,7 @@ class OneImageOfProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.25,
-      child: FittedBox(
-        fit: BoxFit.scaleDown,
-        child: Image.network(
-          imgPath.toString(),
-          errorBuilder: ((context, error, stackTrace) =>
-              const Icon(Icons.account_circle)),
-        ),
-      ),
+      child: CustomCachedNetworkImage(imgUrl: imgPath),
     );
   }
 }

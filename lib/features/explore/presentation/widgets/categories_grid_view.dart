@@ -13,8 +13,7 @@ class CategoriesGridView extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: 10,
-      gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 0.9227,
         crossAxisSpacing: 5,
@@ -24,7 +23,7 @@ class CategoriesGridView extends StatelessWidget {
         color: Color(0xffFDE598),
         name: 'Frash Fruits',
         imgPath:
-            'https://s3-alpha-sig.figma.com/img/ca51/c56f/c6c319bfab3990da934ed0eb9c5ae3e7?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PV~73mxGo-hClodfYGo2S60m-~r1tC1d3lJn9u2mmRJhZ2Q8DfvtJzDCcmwXKs5-6-LdITqEsL2e1cILn3cYnbkW8772q76EVzjNEAJ~QN-calZub0686bHX4XIXkFQQRj3GgYZ2~cqLhX6mTwQjPsQo0AVWa828gpsUWJ3ISewIliV9Z6d4yY0iW9EzE9m1dX8jtqCGsiehWXYaqrpg9rsdRrHwH~1W--MyTsyC3UbsS12erPfnRJPrmjHKdmYRRF6pd-GPypcol2G7DBtwq7dWmW8xr6kvzUc-9xBd9hOyxVeTwkanSJDx6bQ4NjRIJTBACXBqSme37biDat5PRQ__',
+            'https://s3-alpha-sig.figma.com/img/6bc8/dddf/f5d852ef29933852ca183be51838587e?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EojtFB5WHNDh2WyHzp49lJrFArrEDSU~itxm6Ebzj9oW0O8q3AuAIaZrKd04xI9eOu04rhmnOkfcIUrxjISxI0SmGknG3c8TyBAJSvY9qBehXPpOThLXY07m2tv1kC~jVec20xcfyzfOgp21RMo6RCDGvs64fryRUxkhydXEdx1mzQjCp1EV263piyIZ1vqcAK2F-aaCyvVY71t61htBuED49bKZtb1VYVy3cUhMFsgIfkpIdjDUqN4mtwuntWqsSL16q9TYfepOctbELQMEGL5zrwf2rk-vczfyugR8n~oy0F7bN~6IjTeCdqT3vDRXGsuO56IIbVHXSr15R3-6tA__',
         borderSideColor: Color(0xffFDE500),
       ),
     );

@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
+import 'package:nectar_app/core/common/widgets/custom_cached_network_image.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/home/data/models/product_model.dart';
 import 'package:nectar_app/features/home/presentation/views/details_view.dart';
@@ -32,12 +33,7 @@ class CustomProductCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Image.network(
-              productModel.imgPath.toString(),
-              height: 80,
-              errorBuilder: ((context, error, stackTrace) =>
-                  const Icon(Icons.account_circle)),
-            ),
+            CustomCachedNetworkImage(imgUrl: productModel.imgPath , height: 80,),
             ListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(

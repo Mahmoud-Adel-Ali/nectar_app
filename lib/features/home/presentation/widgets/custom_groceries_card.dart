@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/common/widgets/custom_cached_network_image.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 
 class CustomGroceriesCard extends StatelessWidget {
@@ -20,11 +21,10 @@ class CustomGroceriesCard extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(18.0),
-              child: Image.network(
-                imgPath.toString(),
-                errorBuilder: ((context, error, stackTrace) =>
-                    const Icon(Icons.account_circle)),
-              ),
+              child: SizedBox(
+                height: 120,
+                width: 90,
+                child: CustomCachedNetworkImage(imgUrl: imgPath)),
             ),
             Text(text, style: Styless.textStyle20)
           ],
