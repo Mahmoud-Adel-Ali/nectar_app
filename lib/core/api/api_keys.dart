@@ -12,4 +12,5 @@ class ApiKeys {
   static const isAuthenticated = 'isAuthenticated';
   static const id = 'id';
   static const token = 'token';
+  static const errorMessage = 'errorMessage';
 }

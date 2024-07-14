@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/databases/cache/cache_helper.dart';
 import 'package:nectar_app/core/databases/cache/cache_keys.dart';
 import 'package:nectar_app/core/helper/font_family_helper.dart';
 import 'package:nectar_app/core/services/services_locator.dart';
+import 'package:nectar_app/features/auth/presentation/manager/auth/auth_cubit.dart';
 import 'package:nectar_app/features/auth/presentation/views/login_view.dart';
 import 'package:nectar_app/features/onbording/presentation/view/onbording_view.dart';
 
@@ -21,16 +23,20 @@ class NectarApp extends StatelessWidget {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
-    return MaterialApp(
-      title: 'Nectar',
-      theme: ThemeData(
-        fontFamily: FontFamilyHelper.gilroy,
-        scaffoldBackgroundColor: AppColors.scaffoldBackground,
+    return BlocProvider(
+      create: (context) => AuthCubit(),
+      child: MaterialApp(
+        title: 'Nectar',
+        theme: ThemeData(
+          fontFamily: FontFamilyHelper.gilroy,
+          scaffoldBackgroundColor: AppColors.scaffoldBackground,
+        ),
+        debugShowCheckedModeBanner: false,
+        home:
+            getit<CacheHelper>().getBoolean(CacheKeys.onbordingVisited) ?? false
+                ? const LoginView()
+                : const OnbordingView(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: getit<CacheHelper>().getBoolean(CacheKeys.onbordingVisited) ?? false
-          ? const LoginView()
-          : const OnbordingView(),
     );
   }
 }

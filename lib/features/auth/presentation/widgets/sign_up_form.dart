@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
+import 'package:nectar_app/features/auth/presentation/manager/auth/auth_cubit.dart';
 import 'package:nectar_app/features/auth/presentation/functions/valid.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/custom_text_form_field.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/sign_up_service_and_policy.dart';
@@ -14,18 +16,19 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
-  GlobalKey<FormState> formKey = GlobalKey();
-  String? email, password;
+  
   bool hiddenPassword = true;
-  bool emailIsValid = false;
+  bool hiddenConfirmPassword = true;
+  
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
     return Form(
-      key: formKey,
+      key: context.read<AuthCubit>().signUpFormKey,
       child: Column(
         children: [
           CustomTextFormField(
+            controller: context.read<AuthCubit>().signUpUserName,
             hintText: "Username",
             validator: (value) {
               return (value == null || value.isEmpty)
@@ -35,6 +38,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           SizedBox(height: height * 0.04),
           CustomTextFormField(
+            controller: context.read<AuthCubit>().signUpPhoneNumber,
             hintText: "Phone",
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -42,10 +46,12 @@ class _SignUpFormState extends State<SignUpForm> {
               } else if (value.length > 11) {
                 return 'enter correct phone number , less than 11';
               }
+              return null;
             },
           ),
           SizedBox(height: height * 0.04),
           CustomTextFormField(
+            controller: context.read<AuthCubit>().signUpEmail,
             hintText: "Email",
             validator: (value) {
               return validatorOfEmail(value);
@@ -53,6 +59,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           SizedBox(height: height * 0.04),
           CustomTextFormField(
+            controller: context.read<AuthCubit>().signUpPassword,
             hintText: "Password",
             validator: (value) {
               return validatorOfPassword(value);
@@ -70,17 +77,18 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           SizedBox(height: height * 0.02),
           CustomTextFormField(
+            controller: context.read<AuthCubit>().signUpConfirmPassword,
             hintText: "Confirme Password",
             validator: (value) {
               return validatorOfPassword(value);
             },
-            obscureText: hiddenPassword,
+            obscureText: hiddenConfirmPassword,
             suffixIcon: IconButton(
               icon: Icon(
-                hiddenPassword ? Icons.visibility_off : Icons.visibility,
+                hiddenConfirmPassword ? Icons.visibility_off : Icons.visibility,
               ),
               onPressed: () {
-                hiddenPassword = !hiddenPassword;
+                hiddenConfirmPassword = !hiddenConfirmPassword;
                 setState(() {});
               },
             ),
@@ -90,7 +98,7 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(height: height * 0.06),
           CustomButtom(
             onPressed: () {
-              if (formKey.currentState!.validate()) {
+              if (context.read<AuthCubit>().signUpFormKey.currentState!.validate()) {
                 showSnackBar(context,
                     message: 'done', backgroundColor: Colors.green);
               } else {
