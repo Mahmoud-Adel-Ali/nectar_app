@@ -12,7 +12,9 @@ class CustomTextFormField extends StatelessWidget {
     this.onChange,
     this.suffixIcon,
     this.validator,
+    this.controller,
   });
+  TextEditingController? controller;
   String? hintText;
   bool? obscureText;
   Function(String)? onChange;
@@ -21,6 +23,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       obscureText: obscureText!, // show_Text or no
       validator: validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -31,8 +34,7 @@ class CustomTextFormField extends StatelessWidget {
         labelStyle: Styless.textStyle16,
         suffixIcon: suffixIcon,
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: AppColors.mainColor,width: 3)
-        ),
+            borderSide: BorderSide(color: AppColors.mainColor, width: 3)),
       ),
     );
   }

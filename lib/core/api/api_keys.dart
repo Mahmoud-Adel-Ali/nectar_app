@@ -1,14 +1,15 @@
 class ApiKeys {
   static const status = 'status';
-  static const errorMessage = 'ErrorMessage';
-  static const password = 'password';
+  static const username = 'username';
+  static const phoneNumber = 'phoneNumber';
   static const email = 'email';
-  static const token = 'token';
-  static const id = 'id';
-  static const message = 'message';
-  static const name = 'name';
-  static const phone = 'phone';
+  static const password = 'password';
   static const confirmPassword = 'confirmPassword';
-  static const location = 'location';
-  static const profilePic = 'profilePic';
+  static const statusCode = 'statusCode';
+  static const isSuccess = 'isSuccess';
+  static const message = 'message';
+  static const data = 'data';
+  static const isAuthenticated = 'isAuthenticated';
+  static const id = 'id';
+  static const token = 'token';
 }

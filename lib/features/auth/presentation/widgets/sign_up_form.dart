@@ -27,9 +27,6 @@ class _SignUpFormState extends State<SignUpForm> {
         children: [
           CustomTextFormField(
             hintText: "Username",
-            onChange: (data) {
-              email = data;
-            },
             validator: (value) {
               return (value == null || value.isEmpty)
                   ? "please enter your name"
@@ -38,10 +35,18 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           SizedBox(height: height * 0.04),
           CustomTextFormField(
-            hintText: "Email",
-            onChange: (data) {
-              email = data;
+            hintText: "Phone",
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return "please enter your phone number";
+              } else if (value.length > 11) {
+                return 'enter correct phone number , less than 11';
+              }
             },
+          ),
+          SizedBox(height: height * 0.04),
+          CustomTextFormField(
+            hintText: "Email",
             validator: (value) {
               return validatorOfEmail(value);
             },
@@ -49,9 +54,23 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(height: height * 0.04),
           CustomTextFormField(
             hintText: "Password",
-            onChange: (data) {
-              password = data;
+            validator: (value) {
+              return validatorOfPassword(value);
             },
+            obscureText: hiddenPassword,
+            suffixIcon: IconButton(
+              icon: Icon(
+                hiddenPassword ? Icons.visibility_off : Icons.visibility,
+              ),
+              onPressed: () {
+                hiddenPassword = !hiddenPassword;
+                setState(() {});
+              },
+            ),
+          ),
+          SizedBox(height: height * 0.02),
+          CustomTextFormField(
+            hintText: "Confirme Password",
             validator: (value) {
               return validatorOfPassword(value);
             },
