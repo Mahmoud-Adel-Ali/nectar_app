@@ -1,6 +1,8 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
+import 'package:nectar_app/core/common/widgets/show_awesome_dialog.dart';
 import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/auth/presentation/manager/auth/auth_cubit.dart';
@@ -25,9 +27,14 @@ class _SignUpFormState extends State<SignUpForm> {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignUpFailure) {
-          showSnackBar(context, message: state.errorMessage);
+          showAwesomDialog(context,
+              title: 'Error',
+              desc: state.errorMessage,
+              dialogType: DialogType.error,
+              );
         } else if (state is SignUpSuccess) {
-          showSnackBar(context, message: state.signUpModel.message!);
+          showAwesomDialog(context,
+              title: 'Success', desc: state.signUpModel.message!);
         }
       },
       builder: (context, state) {
