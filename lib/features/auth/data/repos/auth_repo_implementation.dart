@@ -3,7 +3,9 @@ import 'package:nectar_app/core/api/api_keys.dart';
 import 'package:nectar_app/core/api/dio_consumer.dart';
 import 'package:nectar_app/core/api/end_points.dart';
 import 'package:nectar_app/core/databases/cache/cache_helper.dart';
+import 'package:nectar_app/core/error/error_model.dart';
 import 'package:nectar_app/core/error/exception.dart';
+import 'package:nectar_app/core/error/status_code_model.dart';
 import 'package:nectar_app/core/services/services_locator.dart';
 import 'package:nectar_app/features/auth/data/models/sign_up_user/sign_up_model.dart';
 import 'package:nectar_app/features/auth/data/repos/auth_repo.dart';
@@ -27,11 +29,25 @@ class AuthRepoImplementation extends AuthRepo {
         ApiKeys.password: password,
         ApiKeys.confirmPassword: confirmPassword,
       });
-      SignUpModel signUpModel = SignUpModel.fromJson(response);
+
+      StatusCodeModel statusCodeModel = StatusCodeModel.fromJson(response);
       // cache helper
+      if (statusCodeModel.statusCode != 200) {
+        ErrorModel errorModel = ErrorModel.fromJson(response);
+        if (errorModel.message == 'Email is Exist') {
+          // Email is Exist
+          return const Left('Email is Exist');
+        } else if (errorModel.message == 'Faild' && errorModel.data != null) {
+          // "message": "Faild",
+          return Left(errorModel.data[0]);
+        } else {
+          return const Left('failure');
+        }
+      }
+      // success
+      SignUpModel signUpModel = SignUpModel.fromJson(response);
       getit<CacheHelper>().setString(ApiKeys.token, signUpModel.data!.token!);
       getit<CacheHelper>().setString(ApiKeys.id, signUpModel.data!.id!);
-      //
       return Right(signUpModel);
     } on ServerException catch (e) {
       return Left(e.errorModel.message ?? 'failure');
