@@ -1,6 +1,7 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/common/widgets/show_awesome_dialog.dart';
 import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
@@ -27,11 +28,12 @@ class _SignUpFormState extends State<SignUpForm> {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignUpFailure) {
-          showAwesomDialog(context,
-              title: 'Error',
-              desc: state.errorMessage,
-              dialogType: DialogType.error,
-              );
+          showAwesomDialog(
+            context,
+            title: 'Error',
+            desc: state.errorMessage,
+            dialogType: DialogType.error,
+          );
         } else if (state is SignUpSuccess) {
           showAwesomDialog(context,
               title: 'Success', desc: state.signUpModel.message!);
@@ -111,7 +113,7 @@ class _SignUpFormState extends State<SignUpForm> {
               const SignUpServiceAndPolicy(),
               SizedBox(height: height * 0.06),
               state is SignUpLoading
-                  ? const CircularProgressIndicator()
+                  ? const CircularProgressIndicator(color: AppColors.mainColor)
                   : CustomButtom(
                       onPressed: () {
                         if (context.read<AuthCubit>().signUpPassword.text !=

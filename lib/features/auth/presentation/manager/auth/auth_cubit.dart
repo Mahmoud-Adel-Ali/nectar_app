@@ -15,6 +15,10 @@ class AuthCubit extends Cubit<AuthState> {
   TextEditingController signUpPassword = TextEditingController();
   TextEditingController signUpConfirmPassword = TextEditingController();
   GlobalKey<FormState> signUpFormKey = GlobalKey();
+  //
+  GlobalKey<FormState> logInformKey = GlobalKey();
+  TextEditingController loginEmail = TextEditingController();
+  TextEditingController loginPassword = TextEditingController();
 
   signUp() async {
     emit(SignUpLoading());
@@ -27,5 +31,16 @@ class AuthCubit extends Cubit<AuthState> {
     response.fold(
         (errorMessage) => emit(SignUpFailure(errorMessage: errorMessage)),
         (signUpModel) => emit(SignUpSuccess(signUpModel: signUpModel)));
+  }
+
+  login() async {
+    emit(SignUpLoading());
+    final response = await authRepoImplementation.login(
+      email: loginEmail.text,
+      password: loginPassword.text,
+    );
+    response.fold(
+        (errorMessage) => emit(LoginFailure(errorMessage: errorMessage)),
+        (signUpModel) => emit(LoginSuccess(signUpModel: signUpModel)));
   }
 }

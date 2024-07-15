@@ -53,4 +53,27 @@ class AuthRepoImplementation extends AuthRepo {
       return Left(e.errorModel.message ?? 'failure');
     }
   }
+
+  @override
+  Future<Either<String, SignUpModel>> login(
+      {required String email, required String password}) async {
+    try {
+      final response = await dio.post(EndPoints.login, data: {
+        ApiKeys.email: email,
+        ApiKeys.password: password,
+      });
+      StatusCodeModel statusCodeModel = StatusCodeModel.fromJson(response);
+      if (statusCodeModel.statusCode != 200) {
+        ErrorModel errorModel = ErrorModel.fromJson(response);
+        return Left(errorModel.message);
+      }
+      // success
+      SignUpModel signUpModel = SignUpModel.fromJson(response);
+      getit<CacheHelper>().setString(ApiKeys.token, signUpModel.data!.token!);
+      getit<CacheHelper>().setString(ApiKeys.id, signUpModel.data!.id!);
+      return Right(signUpModel);
+    } on ServerException catch (e) {
+      return Left(e.errorModel.message);
+    }
+  }
 }
