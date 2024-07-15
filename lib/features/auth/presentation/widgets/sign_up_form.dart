@@ -4,7 +4,7 @@ import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/auth/presentation/manager/auth/auth_cubit.dart';
-import 'package:nectar_app/features/auth/presentation/functions/valid.dart';
+import 'package:nectar_app/features/auth/presentation/manager/functions/valid.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/custom_text_form_field.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/sign_up_service_and_policy.dart';
 
@@ -36,14 +36,11 @@ class _SignUpFormState extends State<SignUpForm> {
           child: Column(
             children: [
               CustomTextFormField(
-                controller: context.read<AuthCubit>().signUpUserName,
-                hintText: "Username",
-                validator: (value) {
-                  return (value == null || value.isEmpty)
-                      ? "please enter your name"
-                      : null;
-                },
-              ),
+                  controller: context.read<AuthCubit>().signUpUserName,
+                  hintText: "Username",
+                  validator: (value) {
+                    return validUserName(value);
+                  }),
               SizedBox(height: height * 0.04),
               CustomTextFormField(
                 controller: context.read<AuthCubit>().signUpPhoneNumber,

@@ -3,7 +3,7 @@ import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
-import 'package:nectar_app/features/auth/presentation/functions/valid.dart';
+import 'package:nectar_app/features/auth/presentation/manager/functions/valid.dart';
 import 'package:nectar_app/features/auth/presentation/views/forget_password_view.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/custom_text_form_field.dart';
 
