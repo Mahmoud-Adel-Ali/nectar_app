@@ -1,0 +1,40 @@
+import 'package:dartz/dartz.dart';
+import 'package:nectar_app/core/api/api_keys.dart';
+import 'package:nectar_app/core/api/dio_consumer.dart';
+import 'package:nectar_app/core/api/end_points.dart';
+import 'package:nectar_app/core/databases/cache/cache_helper.dart';
+import 'package:nectar_app/core/error/exception.dart';
+import 'package:nectar_app/core/services/services_locator.dart';
+import 'package:nectar_app/features/auth/data/models/sign_up_user/sign_up_model.dart';
+import 'package:nectar_app/features/auth/data/repos/auth_repo.dart';
+
+class AuthRepoImplementation extends AuthRepo {
+  final DioConsumer dio;
+
+  AuthRepoImplementation({required this.dio});
+  @override
+  Future<Either<String, SignUpModel>> signUp(
+      {required String username,
+      required String phoneNumber,
+      required String email,
+      required String password,
+      required String confirmPassword}) async {
+    try {
+      final response = await dio.post(EndPoints.signUp, data: {
+        ApiKeys.username: username,
+        ApiKeys.phoneNumber: phoneNumber,
+        ApiKeys.email: email,
+        ApiKeys.password: password,
+        ApiKeys.confirmPassword: confirmPassword,
+      });
+      SignUpModel signUpModel = SignUpModel.fromJson(response);
+      // cache helper
+      getit<CacheHelper>().setString(ApiKeys.token, signUpModel.data!.token!);
+      getit<CacheHelper>().setString(ApiKeys.id, signUpModel.data!.id!);
+      //
+      return Right(signUpModel);
+    } on ServerException catch (e) {
+      return Left(e.errorModel.message ?? 'failure');
+    }
+  }
+}

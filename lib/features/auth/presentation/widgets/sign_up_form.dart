@@ -16,102 +16,127 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
-  
   bool hiddenPassword = true;
   bool hiddenConfirmPassword = true;
-  
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
-    return Form(
-      key: context.read<AuthCubit>().signUpFormKey,
-      child: Column(
-        children: [
-          CustomTextFormField(
-            controller: context.read<AuthCubit>().signUpUserName,
-            hintText: "Username",
-            validator: (value) {
-              return (value == null || value.isEmpty)
-                  ? "please enter your name"
-                  : null;
-            },
-          ),
-          SizedBox(height: height * 0.04),
-          CustomTextFormField(
-            controller: context.read<AuthCubit>().signUpPhoneNumber,
-            hintText: "Phone",
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "please enter your phone number";
-              } else if (value.length > 11) {
-                return 'enter correct phone number , less than 11';
-              }
-              return null;
-            },
-          ),
-          SizedBox(height: height * 0.04),
-          CustomTextFormField(
-            controller: context.read<AuthCubit>().signUpEmail,
-            hintText: "Email",
-            validator: (value) {
-              return validatorOfEmail(value);
-            },
-          ),
-          SizedBox(height: height * 0.04),
-          CustomTextFormField(
-            controller: context.read<AuthCubit>().signUpPassword,
-            hintText: "Password",
-            validator: (value) {
-              return validatorOfPassword(value);
-            },
-            obscureText: hiddenPassword,
-            suffixIcon: IconButton(
-              icon: Icon(
-                hiddenPassword ? Icons.visibility_off : Icons.visibility,
+    return BlocConsumer<AuthCubit, AuthState>(
+      listener: (context, state) {
+        if (state is SignUpFailure) {
+          showSnackBar(context, message: state.errorMessage);
+        } else if (state is SignUpSuccess) {
+          showSnackBar(context, message: state.signUpModel.message!);
+        }
+      },
+      builder: (context, state) {
+        return Form(
+          key: context.read<AuthCubit>().signUpFormKey,
+          child: Column(
+            children: [
+              CustomTextFormField(
+                controller: context.read<AuthCubit>().signUpUserName,
+                hintText: "Username",
+                validator: (value) {
+                  return (value == null || value.isEmpty)
+                      ? "please enter your name"
+                      : null;
+                },
               ),
-              onPressed: () {
-                hiddenPassword = !hiddenPassword;
-                setState(() {});
-              },
-            ),
-          ),
-          SizedBox(height: height * 0.02),
-          CustomTextFormField(
-            controller: context.read<AuthCubit>().signUpConfirmPassword,
-            hintText: "Confirme Password",
-            validator: (value) {
-              return validatorOfPassword(value);
-            },
-            obscureText: hiddenConfirmPassword,
-            suffixIcon: IconButton(
-              icon: Icon(
-                hiddenConfirmPassword ? Icons.visibility_off : Icons.visibility,
+              SizedBox(height: height * 0.04),
+              CustomTextFormField(
+                controller: context.read<AuthCubit>().signUpPhoneNumber,
+                hintText: "Phone",
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "please enter your phone number";
+                  } else if (value.length > 11) {
+                    return 'enter correct phone number , less than 11';
+                  }
+                  return null;
+                },
               ),
-              onPressed: () {
-                hiddenConfirmPassword = !hiddenConfirmPassword;
-                setState(() {});
-              },
-            ),
+              SizedBox(height: height * 0.04),
+              CustomTextFormField(
+                controller: context.read<AuthCubit>().signUpEmail,
+                hintText: "Email",
+                validator: (value) {
+                  return validatorOfEmail(value);
+                },
+              ),
+              SizedBox(height: height * 0.04),
+              CustomTextFormField(
+                controller: context.read<AuthCubit>().signUpPassword,
+                hintText: "Password",
+                validator: (value) {
+                  return validatorOfPassword(value);
+                },
+                obscureText: hiddenPassword,
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    hiddenPassword ? Icons.visibility_off : Icons.visibility,
+                  ),
+                  onPressed: () {
+                    hiddenPassword = !hiddenPassword;
+                    setState(() {});
+                  },
+                ),
+              ),
+              SizedBox(height: height * 0.02),
+              CustomTextFormField(
+                controller: context.read<AuthCubit>().signUpConfirmPassword,
+                hintText: "Confirme Password",
+                validator: (value) {
+                  return validatorOfPassword(value);
+                },
+                obscureText: hiddenConfirmPassword,
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    hiddenConfirmPassword
+                        ? Icons.visibility_off
+                        : Icons.visibility,
+                  ),
+                  onPressed: () {
+                    hiddenConfirmPassword = !hiddenConfirmPassword;
+                    setState(() {});
+                  },
+                ),
+              ),
+              SizedBox(height: height * 0.02),
+              const SignUpServiceAndPolicy(),
+              SizedBox(height: height * 0.06),
+              state is SignUpLoading
+                  ? const CircularProgressIndicator()
+                  : CustomButtom(
+                      onPressed: () {
+                        if (context.read<AuthCubit>().signUpPassword.text !=
+                            context
+                                .read<AuthCubit>()
+                                .signUpConfirmPassword
+                                .text) {
+                          showSnackBar(context,
+                              message: 'password not equal confirnPassword');
+                        } else if (context
+                            .read<AuthCubit>()
+                            .signUpFormKey
+                            .currentState!
+                            .validate()) {
+                          context.read<AuthCubit>().signUp();
+                        } else {
+                          showSnackBar(context,
+                              message: 'please fill all fieldes');
+                        }
+                      },
+                      child: const Text(
+                        "Sing Up",
+                        style: Styless.textStyle18,
+                      ),
+                    ),
+            ],
           ),
-          SizedBox(height: height * 0.02),
-          const SignUpServiceAndPolicy(),
-          SizedBox(height: height * 0.06),
-          CustomButtom(
-            onPressed: () {
-              if (context.read<AuthCubit>().signUpFormKey.currentState!.validate()) {
-                showSnackBar(context,
-                    message: 'done', backgroundColor: Colors.green);
-              } else {
-                showSnackBar(context, message: 'please fill all fieldes');
-              }
-            },
-            child: const Text(
-              "Sing Up",
-              style: Styless.textStyle18,
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

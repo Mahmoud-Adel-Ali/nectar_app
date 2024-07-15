@@ -1,12 +1,14 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nectar_app/features/auth/data/models/sign_up_user/sign_up_model.dart';
+import 'package:nectar_app/features/auth/data/repos/auth_repo_implementation.dart';
 
 part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
-  AuthCubit() : super(AuthInitial());
+  AuthCubit({required this.authRepoImplementation}) : super(AuthInitial());
+  final AuthRepoImplementation authRepoImplementation;
+
   TextEditingController signUpUserName = TextEditingController();
   TextEditingController signUpPhoneNumber = TextEditingController();
   TextEditingController signUpEmail = TextEditingController();
@@ -14,4 +16,16 @@ class AuthCubit extends Cubit<AuthState> {
   TextEditingController signUpConfirmPassword = TextEditingController();
   GlobalKey<FormState> signUpFormKey = GlobalKey();
 
+  signUp() async {
+    emit(SignUpLoading());
+    final response = await authRepoImplementation.signUp(
+        username: signUpUserName.text,
+        phoneNumber: signUpPhoneNumber.text,
+        email: signUpEmail.text,
+        password: signUpPassword.text,
+        confirmPassword: signUpConfirmPassword.text);
+    response.fold(
+        (errorMessage) => emit(SignUpFailure(errorMessage: errorMessage)),
+        (signUpModel) => emit(SignUpSuccess(signUpModel: signUpModel)));
+  }
 }
