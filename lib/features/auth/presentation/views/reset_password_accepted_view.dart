@@ -17,12 +17,12 @@ class ResetPasswordAcceptedView extends StatefulWidget {
 class _ResetPasswordAcceptedViewState extends State<ResetPasswordAcceptedView> {
   void navigateToLoginView() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushAndRemoveUntil(
+      Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => const LoginView(),
         ),
-        (route) => false,
+        // (route) => false,
       );
     }).then(
       (value) {

@@ -20,7 +20,10 @@ class VerificationForm extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is ConfirmNumFailure) {
-          showSnackBar(context, message: state.errorMessage);
+          showAwesomDialog(context,
+              title: 'Error',
+              desc: '${state.errorMessage} , please try again',
+              dialogType: DialogType.error);
         } else if (state is ConfirmNumSuccess) {
           Navigator.pop(context);
           resetPasswordBottomSheet(context);

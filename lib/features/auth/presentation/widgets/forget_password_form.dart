@@ -24,8 +24,8 @@ class ForgetPasswordForm extends StatelessWidget {
               desc: state.errorMessage,
               dialogType: DialogType.error);
         } else if (state is SendNumForEmailSuccess) {
-          showAwesomDialog(context, title: 'Success', desc: state.message);
           setVerificationCodeSheet(context);
+          showAwesomDialog(context, title: 'Success', desc: state.message);
         }
       },
       builder: (context, state) {

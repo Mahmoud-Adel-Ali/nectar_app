@@ -61,3 +61,18 @@ final class ConfirmNumFailure extends AuthState {
 
   ConfirmNumFailure({required this.errorMessage});
 }
+
+//ChangePassword
+final class ChangePasswordLoading extends AuthState {}
+
+final class ChangePasswordSuccess extends AuthState {
+  final String message;
+
+  ChangePasswordSuccess({required this.message});
+}
+
+final class ChangePasswordFailure extends AuthState {
+  final String errorMessage;
+
+  ChangePasswordFailure({required this.errorMessage});
+}
