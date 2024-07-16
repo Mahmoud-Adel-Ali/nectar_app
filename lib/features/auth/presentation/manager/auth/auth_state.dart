@@ -46,3 +46,18 @@ final class SendNumForEmailFailure extends AuthState {
 
   SendNumForEmailFailure({required this.errorMessage});
 }
+//confirmNum
+
+final class ConfirmNumLoading extends AuthState {}
+
+final class ConfirmNumSuccess extends AuthState {
+  final SignUpModel signUpModel;
+
+  ConfirmNumSuccess({required this.signUpModel});
+}
+
+final class ConfirmNumFailure extends AuthState {
+  final String errorMessage;
+
+  ConfirmNumFailure({required this.errorMessage});
+}

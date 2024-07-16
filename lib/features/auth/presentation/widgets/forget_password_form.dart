@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/common/widgets/show_awesome_dialog.dart';
-import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/auth/presentation/manager/auth/auth_cubit.dart';
 import 'package:nectar_app/features/auth/presentation/manager/functions/valid.dart';
@@ -26,7 +25,7 @@ class ForgetPasswordForm extends StatelessWidget {
               dialogType: DialogType.error);
         } else if (state is SendNumForEmailSuccess) {
           showAwesomDialog(context, title: 'Success', desc: state.message);
-          // setVerificationCodeSheet(context);
+          setVerificationCodeSheet(context);
         }
       },
       builder: (context, state) {

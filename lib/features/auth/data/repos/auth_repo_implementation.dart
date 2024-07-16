@@ -88,4 +88,22 @@ class AuthRepoImplementation extends AuthRepo {
       return Left(e.errorModel.message);
     }
   }
+
+  @override
+  Future<Either<String, SignUpModel>> confirmNum({required String code}) async {
+    try {
+      final response = await dio.get(EndPoints.confirmNum(code));
+      final StatusCodeModel statusCodeModel =
+          StatusCodeModel.fromJson(response);
+
+      if (statusCodeModel.statusCode != 200) {
+        ErrorModel errorModel = ErrorModel.fromJson(response);
+        return Left(errorModel.message);
+      }
+      SignUpModel signUpModel = SignUpModel.fromJson(response);
+      return Right(signUpModel);
+    } on ServerException catch (e) {
+      return Left(e.errorModel.message.toString());
+    }
+  }
 }
