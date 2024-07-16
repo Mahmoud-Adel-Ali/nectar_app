@@ -3,6 +3,6 @@ class EndPoints {
   static const login = 'Account/Login';
   static const signUp = 'Account/Register';
   // static const update = 'user/update';
-  // static getUserDataEndPoint(String id) => 'user/get-user/$id';
+  static sendNumForEmail(String email) => 'Account/SendNumForEmail?sendEmail=$email';
   // static deleteUserEndPoint(String id) => 'user/delete?id=$id';
 }

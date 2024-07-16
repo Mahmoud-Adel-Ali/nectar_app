@@ -32,3 +32,17 @@ final class LoginFailure extends AuthState {
 
   LoginFailure({required this.errorMessage});
 }
+
+final class SendNumForEmailLoading extends AuthState {}
+
+final class SendNumForEmailSuccess extends AuthState {
+  final String message;
+
+  SendNumForEmailSuccess({required this.message});
+}
+
+final class SendNumForEmailFailure extends AuthState {
+  final String errorMessage;
+
+  SendNumForEmailFailure({required this.errorMessage});
+}

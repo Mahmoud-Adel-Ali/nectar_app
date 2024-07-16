@@ -14,4 +14,9 @@ abstract class AuthRepo {
     required String email,
     required String password,
   });
+
+Future<Either<String, dynamic>> sentNumForEmail({
+    required String email,
+  });
+
 }
