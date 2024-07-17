@@ -8,6 +8,7 @@ import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/auth/presentation/manager/auth/auth_cubit.dart';
 import 'package:nectar_app/features/auth/presentation/manager/functions/valid.dart';
+import 'package:nectar_app/features/auth/presentation/views/login_view.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/custom_text_form_field.dart';
 import 'package:nectar_app/features/auth/presentation/widgets/sign_up_service_and_policy.dart';
 
@@ -36,7 +37,15 @@ class _SignUpFormState extends State<SignUpForm> {
           );
         } else if (state is SignUpSuccess) {
           showAwesomDialog(context,
-              title: 'Success', desc: state.signUpModel.message!);
+              title: 'Success',
+              desc: state.signUpModel.message!,
+              btnOkText: 'Go to login', btnOkOnPress: () {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LoginView(),
+                ));
+          });
         }
       },
       builder: (context, state) {

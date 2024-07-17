@@ -5,6 +5,8 @@ import 'package:nectar_app/core/utils/styless.dart';
 showAwesomDialog(BuildContext context,
     {required String title,
     required String desc,
+    String? btnOkText,
+    void Function()? btnOkOnPress,
     DialogType dialogType = DialogType.success}) {
   return AwesomeDialog(
     context: context,
@@ -15,6 +17,7 @@ showAwesomDialog(BuildContext context,
     titleTextStyle: Styless.textStyle20bold,
     dialogType: dialogType,
     btnCancelOnPress: () {},
-    btnOkOnPress: () {},
+    btnOkOnPress: btnOkOnPress ?? () {},
+    btnOkText: btnOkText ?? ' Ok',
   )..show();
 }
