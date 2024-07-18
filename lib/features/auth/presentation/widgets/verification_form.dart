@@ -77,9 +77,10 @@ class VerificationForm extends StatelessWidget {
                       onPressed: () {
                         context.read<AuthCubit>().confirmNum();
                       },
-                      child: const Text(
+                      child: Text(
                         "Send Code",
-                        style: Styless.textStyle18,
+                        style: Styless.textStyle18
+                            .copyWith(color: AppColors.scaffoldBackground),
                       ),
                     ),
               const SizedBox(height: 20),

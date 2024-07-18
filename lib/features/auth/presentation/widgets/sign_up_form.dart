@@ -143,9 +143,10 @@ class _SignUpFormState extends State<SignUpForm> {
                               message: 'please fill all fieldes');
                         }
                       },
-                      child: const Text(
+                      child: Text(
                         "Sing Up",
-                        style: Styless.textStyle18,
+                        style: Styless.textStyle18
+                            .copyWith(color: AppColors.scaffoldBackground),
                       ),
                     ),
             ],

@@ -106,9 +106,10 @@ class _LoginFormState extends State<LoginForm> {
                               message: 'please fill all fieldes');
                         }
                       },
-                      child: const Text(
+                      child: Text(
                         "Login",
-                        style: Styless.textStyle18,
+                        style: Styless.textStyle18
+                            .copyWith(color: AppColors.scaffoldBackground),
                       ),
                     ),
             ],

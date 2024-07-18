@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/app/app_colors.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/utils/styless.dart';
 import 'package:nectar_app/features/cart/presentation/widgets/cart_item.dart';
@@ -33,7 +34,12 @@ class CartViewBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Expanded(flex: 4, child: SizedBox(width: 25)),
-                    const Text('Go to Checkout', style: Styless.textStyle16),
+                    Text(
+                      'Go to Checkout',
+                      style: Styless.textStyle16.copyWith(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
                     const Expanded(flex: 3, child: SizedBox(width: 25)),
                     Container(
                       padding: const EdgeInsets.all(5),

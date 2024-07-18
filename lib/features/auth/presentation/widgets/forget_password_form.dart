@@ -54,9 +54,10 @@ class ForgetPasswordForm extends StatelessWidget {
                           context.read<AuthCubit>().sentNumForEmail();
                         }
                       },
-                      child: const Text(
+                      child: Text(
                         "Continue",
-                        style: Styless.textStyle18,
+                        style: Styless.textStyle18
+                            .copyWith(color: AppColors.scaffoldBackground),
                       ),
                     ),
             ],

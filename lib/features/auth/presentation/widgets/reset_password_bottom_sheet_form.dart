@@ -29,8 +29,7 @@ class ResetPasswordBottomSheetForm extends StatelessWidget {
           Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(
-                builder: (context) =>
-                    const ResetPasswordAcceptedView()),
+                builder: (context) => const ResetPasswordAcceptedView()),
             (Route<dynamic> route) => false, // Remove all previous routes
           );
         }
@@ -85,9 +84,10 @@ class ResetPasswordBottomSheetForm extends StatelessWidget {
                           context.read<AuthCubit>().changePassword();
                         }
                       },
-                      child: const Text(
+                      child: Text(
                         "Reset Password",
-                        style: Styless.textStyle18,
+                        style: Styless.textStyle18
+                            .copyWith(color: AppColors.scaffoldBackground),
                       ),
                     ),
               SizedBox(height: height * 0.1),
