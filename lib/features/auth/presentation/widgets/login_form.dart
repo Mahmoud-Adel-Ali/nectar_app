@@ -2,6 +2,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nectar_app/core/app/app_colors.dart';
+import 'package:nectar_app/core/app/nectar_app_views.dart';
 import 'package:nectar_app/core/common/widgets/custom_buttom.dart';
 import 'package:nectar_app/core/common/widgets/show_awesome_dialog.dart';
 import 'package:nectar_app/core/common/widgets/show_snck_bar.dart';
@@ -26,15 +27,17 @@ class _LoginFormState extends State<LoginForm> {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is LoginFailure) {
-          showAwesomDialog(
-            context,
-            title: 'Error',
-            desc: state.errorMessage,
-            dialogType: DialogType.error,
-          );
-        } else if (state is LoginSuccess) {
           showAwesomDialog(context,
-              title: 'Success', desc: state.signUpModel.message!);
+              title: 'Oops! :Error',
+              desc: state.errorMessage,
+              dialogType: DialogType.error,
+              btnOkText: 'try again');
+        } else if (state is LoginSuccess) {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const NectarAppViews()));
+          showSnackBar(context,
+              message: 'You can now bay any thing',
+              backgroundColor: AppColors.mainColor);
         }
       },
       builder: (context, state) {
