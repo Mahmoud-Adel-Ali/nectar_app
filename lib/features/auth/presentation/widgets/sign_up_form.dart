@@ -34,6 +34,12 @@ class _SignUpFormState extends State<SignUpForm> {
             title: 'Error',
             desc: state.errorMessage,
             dialogType: DialogType.error,
+            btnCancel: CustomButtom(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("try again"),
+            ),
           );
         } else if (state is SignUpSuccess) {
           showAwesomDialog(context,

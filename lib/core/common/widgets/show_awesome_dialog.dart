@@ -7,6 +7,7 @@ showAwesomDialog(BuildContext context,
     required String desc,
     bool autoDismiss = false,
     String? btnOkText,
+    Widget? btnCancel,
     void Function()? btnOkOnPress,
     DialogType dialogType = DialogType.success}) {
   return AwesomeDialog(
@@ -20,5 +21,6 @@ showAwesomDialog(BuildContext context,
     btnOkOnPress: btnOkOnPress,
     btnOkText: btnOkText,
     autoDismiss: autoDismiss,
+    btnCancel: btnCancel,
   )..show();
 }
