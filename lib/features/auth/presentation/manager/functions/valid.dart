@@ -1,11 +1,15 @@
 String? validatorOfEmail(String? value) {
-  if (value?.contains(' ') ?? true) {
-    return 'in-valid email';
-  } 
-  return value!.contains(RegExp(
-          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"))
-      ? null
-      : "Enter a valid email";
+  // Define the regex pattern for email validation
+  String pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$';
+  RegExp regex = RegExp(pattern);
+
+  // Check if the email is null or empty
+  if (value == null || value.isEmpty) {
+    return 'Please enter an email';
+  } else if (!regex.hasMatch(value)) {
+    return 'Enter a valid email address';
+  }
+  return null;
 }
 
 String? validatorOfPassword(String? value) {
@@ -28,7 +32,7 @@ String? validUserName(String? value) {
   bool upper = value!.contains(RegExp(r'[A-Z]'));
   bool lower = value.contains(RegExp(r'[a-z]'));
   bool underScore = value.contains('_');
-   if (upper && lower && underScore) {
+  if (upper && lower && underScore) {
     return null;
   } else {
     return 'should contain at least one upper case , lower caser \nand under score';
