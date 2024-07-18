@@ -22,7 +22,7 @@ class CheckoutBottmSheetItem extends StatelessWidget {
             IntrinsicWidth(
               child: ListTile(
                 title: Text(
-                  'Delivery',
+                  title,
                   style: Styless.textStyle18
                       .copyWith(color: const Color(0xff7C7C7C)),
                 ),
